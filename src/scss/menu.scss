@@ -1,0 +1,13 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+
+.menu {
+    margin-top: 1vw;
+
+    .menu__logo {
+        font-size: 2.25vw;
+        color: $branco;
+        text-decoration: none;
+    }
+}

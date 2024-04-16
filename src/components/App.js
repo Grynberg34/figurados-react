@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { CheckAuth } from '../actions';
 import { store } from '../store';
 import { Navigate } from "react-router-dom";
-import "../scss/home.scss";
+import Home from './Home';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -23,8 +23,7 @@ function App(props) {
     )
   } else {
     return (
-      <div>
-      </div>
+      <Home></Home>
     );
   }
   

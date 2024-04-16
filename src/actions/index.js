@@ -21,14 +21,6 @@ export const CheckAuth = (token) => async dispatch => {
           'Authorization': `Bearer ${token}` 
         }
     }).then(function(response){
-        if (response.data.tipo_conta === 'user') {
-            var auth = true;
-            dispatch({ type: 'CHECK_AUTH', payload: auth});
-            dispatch({ type: 'CHECK_USER', payload: response.data});
-            dispatch({ type: 'CHECK_PIX', payload: response.data.pix});
-            dispatch({ type: 'CHECK_VERIFIED', payload: response.data.verificado});
-            dispatch({ type: 'CHECK_DONE', payload: response.data.enviado});
-        } 
     })
     .catch(function(err){
         console.log(err)
@@ -55,5 +47,99 @@ export const LogoutUser = () => async dispatch => {
     await dispatch({ type: 'LOGIN_USER', payload: null });
     await dispatch({ type: 'CHECK_AUTH', payload: false });
     await dispatch({ type: 'SHOW_ALL_GUESSES', payload: null });
+
+};
+
+
+export const GetOpções= () => async dispatch => {
+
+    await api.get('/palpites/todos', {
+    }).then(async function(response){
+        dispatch({ type: 'GET_OPCOES', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+    await api.get('/palpites/jogadores', {
+    }).then(async function(response){
+        dispatch({ type: 'GET_JOGADORES', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+};
+
+export const GetFigurado= () => async dispatch => {
+
+    await api.get('/palpites/dia', {
+    }).then(async function(response){
+        dispatch({ type: 'GET_FIGURADO', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+};
+
+export const GetPalpites= (palpite, figurado) => async dispatch => {
+
+    if (!figurado.certos.includes(palpite.id)) {
+    dispatch({ type: 'SET_ERROS', payload: -1 });
+    
+    palpite.certo = false;
+    dispatch({ type: 'SET_PALPITES', payload: palpite });
+
+    } else {
+        palpite.certo = true;
+        dispatch({ type: 'SET_PALPITES', payload: palpite });
+    
+    }
+
+};
+
+export const FilterJogador = (filter, jogadores) => async dispatch => {
+    
+    if (filter.length < 3) {
+        
+        dispatch({ type: 'GET_FILTERED', payload: null});
+        
+    } else {
+
+        var filtered;
+
+        var new_filter = filter.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        
+        filtered = jogadores.filter(jogador => jogador.nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(new_filter))
+
+        if (filtered.length === 0) {
+            dispatch({ type: 'GET_FILTERED', payload: null});
+        } else {
+            dispatch({ type: 'GET_FILTERED', payload: filtered});
+        }
+    
+    }
+
+};
+
+export const EscolherJogador = (jogador) => async dispatch => {
+
+    dispatch({ type: 'GET_FILTERED', payload: null});
+    dispatch({ type: 'ESCOLHER_JOGADOR', payload: jogador});
+
+};
+
+export const DeletarJogador = () => async dispatch => {
+    
+    dispatch({ type: 'DELETAR_JOGADOR', payload: null});
+
+};
+
+export const ChutarJogador = (jogador, figurado) => async dispatch => {
+
+    if (jogador === figurado) {
+        dispatch({ type: 'DEFINIR_CHUTE', payload: true});
+    } else {
+        dispatch({ type: 'DEFINIR_CHUTE', payload: false});
+    }
 
 };

@@ -1,0 +1,415 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+
+.figurado {
+    position: relative;
+    margin-top: 2.5vw;
+
+    .figurado__hoje {
+        margin-bottom: 5vw;
+
+        .figurado__hoje__title {
+            color: $branco;
+            font-size: 2.5vw;
+            font-weight: 700;
+            text-align: center;
+    
+            .figurado__hoje__title__date {
+                display: inline-block;
+                color: $verde-claro;
+                margin-left: 2vw;
+            }
+        }
+
+        
+    }
+    
+    .figurado__dia {
+        padding: 2vw;
+        padding-bottom: 4vw;
+        border-radius: 12px;
+        background-color: rgba($azul, 0.5);
+
+        .figurado__dia__title {
+            color: $branco;
+            font-size: 2vw;
+            font-weight: 700;
+            margin-bottom: 2vw;
+            text-align: center;
+        }
+    
+        .figurado__dia__anos {
+            padding-top: 1vw;
+            background-color: rgba($color: $verde-claro, $alpha: 0.5);
+            border-radius: 12px;
+            padding: 1vw;
+            padding-top: 2vw;
+            height: 8vw;
+            margin-bottom: 1vw;
+    
+            .figurado__dia__anos__title {
+                color: $branco;
+                font-size: 1.25vw;
+                font-weight: 500;
+                text-align: center;
+                margin-bottom: 1vw;
+            }
+    
+            .figurado__dia__anos__text {
+                color: $branco;
+                font-size: 1.25vw;
+                font-weight: 800;
+                text-align: center;
+            }
+        
+        }
+    
+        .figurado__dia__dica {
+            padding: 1vw;
+            background-color: rgba($color: $verde-claro, $alpha: 0.5);
+            border-radius: 12px;
+            height: 8vw;
+    
+            .figurado__dia__dica__text {
+                color: $branco;
+                font-size: 1vw;
+                font-weight: 500;
+                margin-bottom: 0.5vw;
+                text-align: center;
+            }
+    
+            .figurado__dia__dica__img {
+                width: 30%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 12px;
+            }
+        }
+    
+        .figurado__dia__menu {
+            margin-top: 2vw;
+
+            .figurado__dia__menu__title {
+                color: $verde-claro;
+                font-size: 1.25vw;
+                font-weight: 500;
+                margin-bottom: 2vw;
+                text-align: center;
+                padding: 0.5vw;
+                background-color: $azul;
+                border-radius: 12px;
+                border: 0.2vw solid $verde-claro;
+            }
+
+            .figurado__dia__menu__option {
+                font-size: 1.25vw;
+                width: 100%;
+                color: $branco;
+                margin-bottom: 1vw;
+                border-radius: 12px;
+                background: none;
+                outline: none;
+
+                .figurado__dia__menu__option__down {
+                    width: 5%;
+                }
+
+            }
+
+            .figurado__dia__menu__items {
+                margin-bottom: 0.5vw;
+    
+                .figurado__dia__menu__items__item {
+                    margin-bottom: 1vw;
+                    display: inline-block;
+                    width: 12%;
+                    padding: 0.5vw;
+    
+                    .figurado__dia__menu__items__item__img {
+                        width: 100%;
+                        border-radius: 12px;
+                        cursor: pointer;
+    
+                        &:hover {
+                            transform: scale(0.9);
+                            transition: 0.4s;
+                        }
+                    }
+                    
+                }
+             
+                .figurado__dia__menu__items__item--titulo {
+                    margin-bottom: 1vw;
+                    display: inline-block;
+                    width: 12.5%;
+                    padding: 0.25vw;
+    
+                    .figurado__dia__menu__items__item__img {
+                        width: 100%;
+                        border-radius: 12px;
+                        cursor: pointer;
+    
+                        &:hover {
+                            transform: scale(0.8);
+                            transition: 0.4s;
+                        }
+                    }
+                    
+                }
+
+            }
+
+    
+
+        }
+
+    }
+
+    .figurado__palpites {
+        position: sticky;
+        top: 2.5vw;
+
+        .figurado__palpites__erros {
+            padding: 1.25vw;
+            background-color: rgba($azul, 0.5);
+            border: 0.2vw $vermelho solid;
+            border-radius: 12px;
+            margin-bottom: 2vw;
+    
+            .figurado__palpites__erros__numero {
+                color: $vermelho;
+                font-size: 2vw;
+                font-weight: 500;
+                margin-bottom: 0.25vw;
+                text-align: center;
+            }
+        }
+    
+        
+        .figurado__palpites__palpite {
+            border-radius: 12px;
+            margin-top: 1vw;
+            padding: 0.5vw;
+    
+            .figurado__palpites__palpite__img {
+                width: 100%;
+                border-radius: 12px;
+            }
+    
+            .figurado__palpites__palpite__text {
+                color: $branco;
+                padding-top: 1vw;
+                font-size: 1.2vw;
+                font-weight: 700;
+                margin-bottom: 0.5vw;
+                text-align: center;
+    
+    
+            }
+        }
+    
+        .figurado__palpites__chute {
+            position: relative;
+            background-color: rgba($roxo, 0.5); 
+            padding: 2vw;
+            padding-top: 2.5vw;
+            border-radius: 12px;
+            margin-top: 2vw;
+    
+            .figurado__palpites__chute__label {
+                display: block;
+                color: $branco;
+                font-size: 1.25vw;
+                font-weight: 500;
+                margin-bottom: 1vw;
+                text-align: center;
+            }
+    
+            .figurado__palpites__chute__input {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 2vw;
+                width: 100%;
+                border-radius: 12px;
+                text-align: center;
+                border: none;
+                outline: none;
+    
+                &:focus {
+                    border: none;
+                    outline: none;
+    
+                }
+            }
+    
+            .figurado__palpites__chute__jogadores {
+                display: block;
+                padding: 1vw;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 2vw;
+                border-radius: 12px;
+                background-color: $cinza;
+                list-style: none;
+                max-height: 10vw;
+                overflow-y: auto;
+    
+                .figurado__palpites__chute__jogadores__jogador {
+                    color: $roxo;
+                    font-size: 1vw;
+                    font-weight: 500;
+                    margin-bottom: 0.25vw;
+                    text-align: center;
+                    cursor: pointer;
+                    user-select: none;
+    
+                    &:hover {
+                        color: $verde-medio;
+                    }
+                }
+    
+            }
+    
+            .figurado__palpites__chute__jogadores::-webkit-scrollbar-track {
+                border: 2px solid $roxo;
+                border-radius: 12px;
+            }
+               
+            .figurado__palpites__chute__jogadores::-webkit-scrollbar-thumb {
+                background-color: $verde-claro;
+                outline: none;
+                border-radius: 12px;
+            }
+    
+            .figurado__palpites__chute__jogadores::-webkit-scrollbar {
+                width: 1vw;
+            }
+    
+            .figurado__palpites__chute__jogador {
+                position: relative;
+    
+                .figurado__palpites__chute__jogador__fechar {
+                    display: block;
+                    margin-left: auto;
+                    margin-bottom: 1vw;
+                    padding: 0.25vw;
+                    padding-left: 0.75vw;
+                    padding-right: 0.75vw;
+                    border-radius: 12px;
+                    background-color: $vermelho;
+                    color: $branco;
+                    font-weight: 700;
+                    font-size: 0.75vw;
+                    border: none;
+                    outline: none;
+    
+                }
+    
+                .figurado__palpites__chute__jogador__nome {
+                    color: $branco;
+                    font-size: 1.5vw;
+                    font-weight: 500;
+                    margin-bottom: 2vw;
+                    text-align: center;
+                    cursor: pointer;
+                    user-select: none;
+                }
+    
+                .figurado__palpites__chute__jogador__button {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding: 0.5vw;
+                    font-weight: 700;
+                    padding-left: 1vw;
+                    padding-right: 1vw;
+                    border-radius: 36px;
+                    background-color: $verde-claro;
+                    color: $roxo;
+                    width: 70%;
+                    font-size: 1vw;
+                    border: none;
+                    outline: none;
+                    
+                }
+            }
+    
+    
+        }
+
+    }
+
+    .figurado__option {
+        margin-bottom: 2vw;
+        
+
+        .figurado__option__items {
+            padding: 1vw;
+            padding-top: 2vw;
+            border-radius: 12px;
+            background-color: rgba($verde-claro, 0.5);
+
+            .figurado__option__items__item {
+                margin-bottom: 1vw;
+
+                .figurado__option__items__item__img {
+                    width: 100%;
+                    border-radius: 12px;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(0.9);
+                        transition: 0.4s;
+                    }
+                    
+                }
+
+                .figurado__option__items__item__img--time {
+                    width: 100%;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.40);
+                        transition: 0.4s;
+                    }
+                    
+                }
+            }
+
+            
+        }
+
+        .figurado__option__items--pos {
+            border-radius: 12px;
+            padding-top: 1vw;
+            background-color: rgba($verde-claro, 0.5);
+
+            .figurado__option__items__item {
+                margin-bottom: 1vw;
+
+                .figurado__option__items__item__img {
+                    width: 100%;
+                    border-radius: 12px;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(0.9);
+                        transition: 0.4s;
+                    }
+                }
+            }
+
+            
+        }
+
+        
+    }
+}
+
+.posições {
+    margin-bottom: 0;
+}

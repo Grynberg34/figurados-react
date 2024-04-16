@@ -1,37 +1,12 @@
 @import '../scss/colors.scss';
 @import '../scss/font.scss';
-@import '../scss/menu.scss';
 
 
-.menu {
-
-    .menu__link {
-        display: block;
-        margin-bottom: 2vw;
-        color: $branco;
-        font-size: 20px;
-        text-decoration: none;
-        text-align: center;
-        
-    }
-}
-
-@media only screen and (max-width: 767px) {
-
-    .menu {
-        .menu__link {
-            margin-bottom: 10vw;
-        }
-    }
-
-
-}
-
-input {
-    border: none;
-
-    &:focus {
-        outline: none;
-        border: none;
-    }
+.home {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 100vw;
+    padding-bottom: 10vw;
 }

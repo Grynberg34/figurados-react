@@ -1,5 +1,4 @@
 import React from 'react';
-import LoginForm from './LoginForm';
 import { LogInUser } from '../actions';
 import { CheckAuth } from '../actions';
 import { AuthGoogle } from '../actions';
@@ -7,19 +6,12 @@ import { connect } from 'react-redux';
 import { store } from '../store';
 import { Link, Navigate } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
-import "../scss/login.scss";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 function Login(props) {
 
-
-  function submit (values) {
-
-    store.dispatch(LogInUser(values))
-
-  }
 
   const responseGoogle = (response) => {
 
