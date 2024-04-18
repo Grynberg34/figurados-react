@@ -1,0 +1,55 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+
+.hoje {
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+
+    .hoje__rewind {
+        display: inline-block;
+        width: 9%;
+        margin-right: 0.5vw;
+    }    
+
+    .hoje__numero {
+        display: inline-block;
+        color: $verde-claro;
+        font-size: 1.75vw;
+        font-weight: 700;
+    }
+
+    .hoje__title {
+        color: $branco;
+        font-size: 2.5vw;
+        font-weight: 700;
+        text-align: center;
+
+        .hoje__title__date {
+            display: inline-block;
+            color: $verde-claro;
+            margin-left: 2vw;
+        }
+    }
+
+    .hoje__ajuda {
+        display: block;
+        margin-left: auto;
+        color: $azul;
+        font-size: 1.5vw;
+        font-weight: 700;
+        text-align: center;
+        padding: 0.1vw;
+        border: 0.2vw solid $verde-claro;
+        border-radius: 12px;
+        width: 15%;
+        background-color: $verde-claro;
+
+        &:hover {
+            background-color: $azul;
+            color: $verde-claro;
+        }
+
+    }
+
+}

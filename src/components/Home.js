@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Figurado from './Figurado';
 import Resultado from './Resultado';
+import Hoje from './Hoje';
 import Menu from './Menu';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -23,6 +24,8 @@ function Home(props) {
           <Col md={8}>
 
             <Menu></Menu>
+
+            <Hoje></Hoje>
 
             {
               palpites.chute === null ?

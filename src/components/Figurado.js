@@ -11,9 +11,6 @@ import "../scss/figurado.scss";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import moment from 'moment';
-import 'moment/locale/pt-br';
-moment.locale('pt-br')
 
 
 function Figurado(props) {
@@ -27,8 +24,6 @@ function Figurado(props) {
   let palpites = props.palpites;
 
   let filter = props.filter;
-
-  console.log(process.env.REACT_APP_TOKEN)
 
   function darPalpite(palpite) {
 
@@ -65,17 +60,10 @@ function Figurado(props) {
     return (
       <div className='figurado'>
 
-        <div className='figurado__hoje'>
-                          
-          <h1 className='figurado__hoje__title'>#{figurado.número}<span className="figurado__hoje__title__date">{moment(figurado.data).format('D/MM/Y')}</span></h1>
-          
-        </div>
-
         <Container fluid>
           <Row>
             <Col md={7}>
 
-    
               <div className='figurado__dia'>
               
                 <h1 className='figurado__dia__title'>quem é o jogador?</h1>
@@ -101,9 +89,9 @@ function Figurado(props) {
 
                 <div className='figurado__dia__menu'>
 
-                  <h2 className='figurado__dia__menu__title'>clique nas opções abaixo</h2>
+                  <h2 className='figurado__dia__menu__title'>clique nas opções abaixo para mais dicas</h2>
 
-                  <h5 className='figurado__dia__menu__option'>jogava de</h5>
+                  <h5 className='figurado__dia__menu__option'>jogava de...</h5>
                   <div className='figurado__dia__menu__items'>
 
                     { opções.posições.map( (posição) => 
@@ -114,7 +102,7 @@ function Figurado(props) {
 
                   </div>
 
-                  <h5 className='figurado__dia__menu__option'>jogou no</h5>
+                  <h5 className='figurado__dia__menu__option'>jogou no...</h5>
                   <div className='figurado__dia__menu__items'>
 
                     { opções.times.map( (time) => 
@@ -126,7 +114,7 @@ function Figurado(props) {
                   </div>
 
 
-                  <h5 className='figurado__dia__menu__option'>ganhou</h5>
+                  <h5 className='figurado__dia__menu__option'>ganhou...</h5>
                   <div className='figurado__dia__menu__items'>
 
 

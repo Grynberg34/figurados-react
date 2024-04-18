@@ -5,25 +5,6 @@
 .figurado {
     position: relative;
     margin-top: 2.5vw;
-
-    .figurado__hoje {
-        margin-bottom: 5vw;
-
-        .figurado__hoje__title {
-            color: $branco;
-            font-size: 2.5vw;
-            font-weight: 700;
-            text-align: center;
-    
-            .figurado__hoje__title__date {
-                display: inline-block;
-                color: $verde-claro;
-                margin-left: 2vw;
-            }
-        }
-
-        
-    }
     
     .figurado__dia {
         padding: 2vw;

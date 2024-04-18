@@ -1,4 +1,5 @@
 import api from '../api/api';
+import { jwtDecode } from "jwt-decode";
 
 // REGISTER, LOGIN, REDEFINE, AUTH
 
@@ -16,11 +17,20 @@ export const LogInUser = (user) => async dispatch => {
 
 export const CheckAuth = (token) => async dispatch => {
 
-    await api.get('/user', {
+    await api.get('/auth/user', {
         headers: {
           'Authorization': `Bearer ${token}` 
         }
     }).then(function(response){
+
+        console.log(response.data)
+
+        if (response.data.id) {
+            dispatch({ type: 'CHECK_AUTH', payload: true});
+        } else {
+            dispatch({ type: 'CHECK_AUTH', payload: false});
+        }
+
     })
     .catch(function(err){
         console.log(err)
@@ -29,11 +39,12 @@ export const CheckAuth = (token) => async dispatch => {
 };
 
 
-export const AuthGoogle = (googleUser) => async dispatch => {
+export const AuthGoogle = (credential) => async dispatch => {
+
+    const decoded = jwtDecode(credential);
 
     await api.post('/auth/google/signin', {
-        name: googleUser.profileObj.name,
-        googleID: googleUser.googleId
+        profile: decoded
     }).then(function(response){
         dispatch({ type: 'LOGIN_USER', payload: response.data.token });
     }).catch(function(err){

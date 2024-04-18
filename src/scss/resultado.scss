@@ -3,4 +3,82 @@
 
 .resultado {
 
+    .resultado__certo {
+        .resultado__certo__title {
+            color: $verde-claro;
+            font-size: 3vw;
+            font-weight: 700;
+            margin-bottom: 1vw;
+            text-align: center;
+        }
+
+        .resultado__certo__img {
+            width: 100%;
+            margin-bottom: 1vw;
+        }
+
+        .resultado__certo__subtitle {
+            color: $branco;
+            font-size: 1vw;
+            font-weight: 400;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .resultado__certo__youtube {
+            margin-top: 2vw;
+            width: 40vw;
+            height: 22.50vw;
+            margin-bottom: 2vw;
+        }
+
+        .resultado__certo__wikipedia {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            color: $branco;
+            font-size: 1vw;
+            font-weight: 500;
+            margin-bottom: 2vw;
+            text-align: center;
+            padding: 1vw;
+            padding-top: 0.5vw;
+            padding-bottom: 0.5vw;
+            background-color: $azul;
+            border-radius: 12px;
+            background-color: rgba($verde-claro, 0.8);
+            width: 50%;
+            text-decoration: none;
+
+            &:hover {
+                background-color: rgba($verde-medio, 0.8);
+            }
+
+        }
+
+
+    }
+
+    .resultado__errado {
+        margin-top: 6vw;
+
+        .resultado__errado__title {
+            color: $vermelho;
+            font-size: 5vw;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2vw;
+        }
+
+        .resultado__errado__subtitle {
+            color: $branco;
+            font-size: 2vw;
+            font-weight: 400;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.5;
+        }
+    }
+
 }
