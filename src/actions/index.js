@@ -14,7 +14,6 @@ export const LogInUser = (user) => async dispatch => {
     
 };
 
-
 export const CheckAuth = (token) => async dispatch => {
 
     await api.get('/auth/user', {
@@ -38,7 +37,6 @@ export const CheckAuth = (token) => async dispatch => {
 
 };
 
-
 export const AuthGoogle = (credential) => async dispatch => {
 
     const decoded = jwtDecode(credential);
@@ -61,7 +59,6 @@ export const LogoutUser = () => async dispatch => {
 
 };
 
-
 export const GetOpções= () => async dispatch => {
 
     await api.get('/palpites/todos', {
@@ -81,15 +78,31 @@ export const GetOpções= () => async dispatch => {
     })
 };
 
-export const GetFigurado= () => async dispatch => {
+export const GetNúmero= () => async dispatch => {
 
-    await api.get('/palpites/dia', {
+    await api.get(`/palpites/numero`, {
     }).then(async function(response){
+        dispatch({ type: 'GET_NÚMERO', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+    
+};
+
+export const GetFigurado= (id) => async dispatch => {
+
+    await api.get(`/palpites/dia/${id}`, {
+    }).then(async function(response){
+
         dispatch({ type: 'GET_FIGURADO', payload: response.data });
     })  
     .catch(function(err){
         console.log(err)
     })
+
+
+    
 };
 
 export const GetPalpites= (palpite, figurado) => async dispatch => {

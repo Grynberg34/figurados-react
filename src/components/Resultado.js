@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link, Navigate } from "react-router-dom";
 import { GetFigurado } from '../actions';
 import { store } from '../store';
 import "../scss/resultado.scss";
@@ -32,11 +31,11 @@ function Resultado(props) {
               <Row>
                 <Col md={3}>
 
-                  <h1 className="resultado__certo__title">no alvo!</h1>
+                  <h1 className="resultado__certo__title">no gol !</h1>
 
                   <img className='resultado__certo__img' src={figurado.imagem} alt="" />
 
-                  <h1 className="resultado__certo__subtitle">cadastre-se ou faça login para adicionar o figurado ao seu álbum</h1>
+                  <h1 className="resultado__certo__subtitle">cadastre-se ou faça login para adicionar o figurado no álbum</h1>
 
                 </Col>
 

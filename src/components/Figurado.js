@@ -216,7 +216,8 @@ function mapStateToProps(state) {
     jogadores: state.jogadores,
     figurado: state.figurado,
     palpites: state.palpites,
-    filter: state.filter
+    filter: state.filter,
+    auth: state.auth,
   }
 }
 

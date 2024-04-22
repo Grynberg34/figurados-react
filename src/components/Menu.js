@@ -15,8 +15,6 @@ function Menu(props) {
   
   var auth =  props.auth;
 
-  console.log(jwt, auth);
-
   if(jwt !== null && auth !== true) {
     store.dispatch(CheckAuth(props.jwt))
   }
@@ -62,15 +60,19 @@ function Menu(props) {
             </Col>
   
             <Col md={3}>
-            <GoogleLogin
-              onSuccess={response => {
+              <div className="menu__google">
 
-                store.dispatch(AuthGoogle(response.credential))
-              }}
-              onError={() => {
-                console.log('Login Failed');
-              }}
-            />
+                <GoogleLogin
+                onSuccess={response => {
+
+                  store.dispatch(AuthGoogle(response.credential))
+                }}
+                onError={() => {
+                  console.log('Login Failed');
+                }}
+                />
+
+              </div>
             </Col>
           </Row>
   

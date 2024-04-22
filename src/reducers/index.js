@@ -66,6 +66,16 @@ const getJogadoresReducer = (jogadores = null, action) => {
   return jogadores;
 };
 
+const getNúmeroReducer = (número = null, action) => {
+  if (action.type === 'GET_NÚMERO') {
+
+    return action.payload;
+    
+  }
+  
+  return número;
+};
+
 const getFiguradoReducer = (figurado = null, action) => {
   if (action.type === 'GET_FIGURADO') {
 
@@ -76,7 +86,7 @@ const getFiguradoReducer = (figurado = null, action) => {
   return figurado;
 };
 
-const getPalpitesReducer = (palpites = {opções : [], erros: 5, jogador: null, chute: null}, action) => {
+const getPalpitesReducer = (palpites = {figurado_id: null, opções : [], erros: 7, jogador: null, chute: null}, action) => {
   switch (action.type) {
     case 'SET_PALPITES':
       return {
@@ -120,7 +130,6 @@ const getFilteredReducer = (filter = null, action) => {
 
 
 export default combineReducers({
-
   jwt: userLogInReducer,
   auth: checkAuthReducer,
   fail: failedLogInReducer,
@@ -129,5 +138,7 @@ export default combineReducers({
   jogadores: getJogadoresReducer,
   figurado: getFiguradoReducer,
   palpites: getPalpitesReducer,
-  filter: getFilteredReducer
+  filter: getFilteredReducer,
+  número: getNúmeroReducer
+
 });
