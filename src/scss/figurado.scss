@@ -61,7 +61,7 @@
             }
     
             .figurado__dia__dica__img {
-                width: 30%;
+                width: 35%;
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
@@ -130,6 +130,7 @@
                     .figurado__dia__menu__items__item__img {
                         width: 100%;
                         border-radius: 12px;
+                        padding: 0.1vw;
                         cursor: pointer;
     
                         &:hover {
@@ -204,8 +205,18 @@
                 color: $branco;
                 font-size: 1.25vw;
                 font-weight: 500;
-                margin-bottom: 1vw;
+                margin-bottom: 0.5vw;
                 text-align: center;
+            }
+
+            .figurado__palpites__chute__sub {
+                display: block;
+                color: $verde-claro;
+                font-size: 0.75vw;
+                font-weight: 400;
+                margin-bottom: 0.5vw;
+                text-align: center;
+                font-style: italic;
             }
     
             .figurado__palpites__chute__input {
@@ -294,7 +305,7 @@
                     color: $branco;
                     font-size: 1.5vw;
                     font-weight: 500;
-                    margin-bottom: 2vw;
+                    margin-bottom: 1vw;
                     text-align: center;
                     cursor: pointer;
                     user-select: none;
@@ -309,6 +320,7 @@
                     padding-left: 1vw;
                     padding-right: 1vw;
                     border-radius: 36px;
+                    margin-top: 2vw;
                     background-color: $verde-claro;
                     color: $roxo;
                     width: 70%;

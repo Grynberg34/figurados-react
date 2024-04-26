@@ -13,15 +13,6 @@ const userLogInReducer = (jwt = null, action) => {
   return jwt;
 };
 
-const failedLogInReducer = (msg = '', action) => {
-  if (action.type === 'FAIL_LOGIN') {
-
-    return action.payload;
-    
-  }
-  
-  return msg;
-};
 
 //AUTH
 
@@ -86,8 +77,8 @@ const getFiguradoReducer = (figurado = null, action) => {
   return figurado;
 };
 
-const getPalpitesReducer = (palpites = {figurado_id: null, opções : [], erros: 7, jogador: null, chute: null}, action) => {
-  switch (action.type) {
+const getPalpitesReducer = (palpites =  {figurado_num: null, opções : [], erros: 7, jogador: null, chute: null}, action) => {
+  switch (action.type) { 
     case 'SET_PALPITES':
       return {
         ...palpites,
@@ -112,7 +103,9 @@ const getPalpitesReducer = (palpites = {figurado_id: null, opções : [], erros:
       return {
         ...palpites,
         chute: action.payload
-      };    
+      };  
+      case 'RESET_PALPITES':
+        return action.payload;        
     default:
       return palpites;
   }
@@ -132,7 +125,6 @@ const getFilteredReducer = (filter = null, action) => {
 export default combineReducers({
   jwt: userLogInReducer,
   auth: checkAuthReducer,
-  fail: failedLogInReducer,
   user: checkUserReducer,
   opções: getOpçõesReducer,
   jogadores: getJogadoresReducer,

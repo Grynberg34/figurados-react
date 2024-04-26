@@ -4,6 +4,8 @@
 
 .menu {
     margin-top: 1vw;
+    padding-bottom: 1vw;
+    border-bottom: 0.2vw solid $branco;
 
     .menu__logo {
         font-size: 2.25vw;
@@ -12,6 +14,35 @@
     }
 
     .menu__google {
-        padding-top: 0.5vw;
+        padding-top: 0.75vw;
+    }
+
+    .menu__link {
+        display: block;
+        padding-top: 1vw;
+        font-size: 1.1vw;
+        color: $branco;
+        text-decoration: none;
+        font-weight: 400;
+
+        &:hover {
+            color: $verde-claro;
+        }
+    }
+
+    .menu__button {
+        display: block;
+        padding-top: 1vw;
+        font-size: 1.1vw;
+        color: $verde-claro;
+        text-decoration: none;
+        font-weight: 400;
+        background: none;
+        border: none;
+        outline: none;
+
+        &:hover {
+            color: $branco;
+        }
     }
 }

@@ -2,37 +2,52 @@
 @import '../scss/font.scss';
 
 
-.hoje {
-    margin-top: 3vw;
+.header {
+    margin-top: 2vw;
     margin-bottom: 3vw;
 
-    .hoje__rewind {
+    .header__rewind {
         display: inline-block;
         width: 9%;
         margin-right: 0.5vw;
-    }    
+    }   
+    
+    .header__rewind--right {
+        display: inline-block;
+        width: 9%;
+        margin-right: 0.5vw;
+        transform: rotate(180deg)
+    }
 
-    .hoje__numero {
+    .header__numero {
         display: inline-block;
         color: $verde-claro;
         font-size: 1.75vw;
         font-weight: 700;
     }
 
-    .hoje__title {
+    .header__numero--right {
+        display: inline-block;
+        color: $verde-claro;
+        font-size: 1.75vw;
+        font-weight: 700;
+        text-align: right;
+    }
+
+    .header__title {
         color: $branco;
         font-size: 2.5vw;
         font-weight: 700;
         text-align: center;
 
-        .hoje__title__date {
+        .header__title__date {
             display: inline-block;
             color: $verde-claro;
             margin-left: 2vw;
         }
     }
 
-    .hoje__ajuda {
+    .header__ajuda {
         display: block;
         margin-left: auto;
         color: $azul;

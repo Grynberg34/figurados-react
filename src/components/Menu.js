@@ -6,6 +6,7 @@ import { CheckAuth } from '../actions';
 import { GoogleLogin } from '@react-oauth/google';
 import { Link, Navigate } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
+import { LogoutUser } from '../actions';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -15,10 +16,20 @@ function Menu(props) {
   
   var auth =  props.auth;
 
+  var palpites = props.palpites;
+
+  var figurado = props.figurado;
+
+
   if(jwt !== null && auth !== true) {
-    store.dispatch(CheckAuth(props.jwt))
+    store.dispatch(CheckAuth(props.jwt, palpites, figurado))
+
   }
 
+  function logout() {
+    store.dispatch(LogoutUser())
+  }
+  
   if (auth === true) {
     return (
       <div className="menu">
@@ -30,12 +41,20 @@ function Menu(props) {
               <a className="menu__logo" href="/">figurados.com.br</a>
             </Col>
   
-            <Col md={5}>
+            <Col md={2}>
             
             </Col>
   
-            <Col md={3}>
+            <Col md={2} xs={4}>
+              <Link className="menu__link" to="/">jogar</Link>
+            </Col>
+    
+            <Col md={2} xs={4}>
+              <Link className="menu__link" to="/album">álbum</Link>
+            </Col>
 
+            <Col md={2} xs={4}>
+              <button className="menu__button" onClick={logout}>sair</button>
             </Col>
           </Row>
   
@@ -64,11 +83,10 @@ function Menu(props) {
 
                 <GoogleLogin
                 onSuccess={response => {
-
                   store.dispatch(AuthGoogle(response.credential))
                 }}
                 onError={() => {
-                  console.log('Login Failed');
+                  console.log('Login failed');
                 }}
                 />
 
@@ -90,6 +108,8 @@ function mapStateToProps(state) {
   return {
     auth: state.auth,
     jwt: state.jwt,
+    palpites: state.palpites,
+    figurado: state.figurado,
   }
 }
 
