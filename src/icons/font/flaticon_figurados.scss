@@ -1,0 +1,53 @@
+$flaticon_figurados-font: "flaticon_figurados";
+
+@font-face {
+    font-family: $flaticon_figurados-font;
+    src: url("./flaticon_figurados.woff2?94fe8705886792c4ec1ed6ad1b733703") format("woff2"),
+url("./flaticon_figurados.woff?94fe8705886792c4ec1ed6ad1b733703") format("woff"),
+url("./flaticon_figurados.eot?94fe8705886792c4ec1ed6ad1b733703#iefix") format("embedded-opentype"),
+url("./flaticon_figurados.ttf?94fe8705886792c4ec1ed6ad1b733703") format("truetype"),
+url("./flaticon_figurados.svg?94fe8705886792c4ec1ed6ad1b733703#flaticon_figurados") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_figurados !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_figurados-map: (
+    "sort": "\f101",
+    "sort-descending": "\f102",
+    "downward-arrow": "\f103",
+    "cancel": "\f104",
+    "question": "\f105",
+    "rewind-button": "\f106",
+    "fast-forward": "\f107",
+);
+
+.flaticon-sort:before {
+    content: map-get($flaticon_figurados-map, "sort");
+}
+.flaticon-sort-descending:before {
+    content: map-get($flaticon_figurados-map, "sort-descending");
+}
+.flaticon-downward-arrow:before {
+    content: map-get($flaticon_figurados-map, "downward-arrow");
+}
+.flaticon-cancel:before {
+    content: map-get($flaticon_figurados-map, "cancel");
+}
+.flaticon-question:before {
+    content: map-get($flaticon_figurados-map, "question");
+}
+.flaticon-rewind-button:before {
+    content: map-get($flaticon_figurados-map, "rewind-button");
+}
+.flaticon-fast-forward:before {
+    content: map-get($flaticon_figurados-map, "fast-forward");
+}

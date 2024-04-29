@@ -29,7 +29,7 @@ function Figurado(props) {
 
     if (palpites.erros > 0) {
 
-      store.dispatch(GetPalpites(palpite, figurado, user));
+      store.dispatch(GetPalpites(palpite, figurado, user.id));
     }
   }
 
@@ -45,8 +45,8 @@ function Figurado(props) {
     store.dispatch(DeletarJogador());
   }
 
-  function chutarJogador(jogador, id,user) {
-    store.dispatch(ChutarJogador(jogador, id, user));
+  function chutarJogador(jogador, id, user) {
+    store.dispatch(ChutarJogador(jogador, id, user.id));
   }
 
   return (
@@ -174,13 +174,21 @@ function Figurado(props) {
                   </div>
                   :<div className="figurado__palpites__chute__jogador">
                     
-                    <button onClick={() => deletarJogador()} className="figurado__palpites__chute__jogador__fechar">X</button>
+                    <Container fluid>
+                      <Row>
+                        <Col md={8}></Col>
+
+                        <Col md={4}>
+                          <i onClick={() => deletarJogador()} className="figurado__palpites__chute__jogador__fechar flaticon-cancel"></i>
+                        </Col>
+                      </Row>
+                    </Container>
 
                     <h4 className="figurado__palpites__chute__jogador__nome">{palpites.jogador.nome}</h4>
-                    <span className="figurado__palpites__chute__sub">esta é sua escolha final?</span>
-                    <span className="figurado__palpites__chute__sub">você só tem uma chance para acertar</span>
+                    <span className="figurado__palpites__chute__sub">essa é sua escolha final?</span>
+                    <span className="figurado__palpites__chute__sub">você só tem uma chance</span>
 
-                    <button onClick={() => chutarJogador(palpites.jogador.id, figurado.id,user)} className="figurado__palpites__chute__jogador__button">chutar pro gol</button>
+                    <button onClick={() => chutarJogador(palpites.jogador.id, figurado.id, user.id)} className="figurado__palpites__chute__jogador__button">chutar pro gol</button>
 
                   </div>
                 }

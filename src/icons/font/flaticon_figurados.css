@@ -1,0 +1,53 @@
+/*!
+*    ______ _       _   _
+*    |  ____| |     | | (_)
+*    | |__  | | __ _| |_ _  ___ ___  _ __
+*    |  __| | |/ _` | __| |/ __/ _ \| '_ \
+*    | |    | | (_| | |_| | (_| (_) | | | |
+*    |_|    |_|\__,_|\__|_|\___\___/|_| |_|
+*
+*         https://www.flaticon.com
+*/
+
+@font-face {
+    font-family: "flaticon_figurados";
+    src: url("./flaticon_figurados.woff2?94fe8705886792c4ec1ed6ad1b733703") format("woff2"),
+url("./flaticon_figurados.woff?94fe8705886792c4ec1ed6ad1b733703") format("woff"),
+url("./flaticon_figurados.eot?94fe8705886792c4ec1ed6ad1b733703#iefix") format("embedded-opentype"),
+url("./flaticon_figurados.ttf?94fe8705886792c4ec1ed6ad1b733703") format("truetype"),
+url("./flaticon_figurados.svg?94fe8705886792c4ec1ed6ad1b733703#flaticon_figurados") format("svg")
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_figurados !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-sort:before {
+    content: "\f101";
+}
+.flaticon-sort-descending:before {
+    content: "\f102";
+}
+.flaticon-downward-arrow:before {
+    content: "\f103";
+}
+.flaticon-cancel:before {
+    content: "\f104";
+}
+.flaticon-question:before {
+    content: "\f105";
+}
+.flaticon-rewind-button:before {
+    content: "\f106";
+}
+.flaticon-fast-forward:before {
+    content: "\f107";
+}
+

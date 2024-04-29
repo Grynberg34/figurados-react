@@ -34,7 +34,7 @@ function Home(props) {
     store.dispatch(GetOpções())
 
     return (
-      <div className="home" style={{backgroundImage: `url('/background5.png')`}}></div>
+      <div className="home" style={{backgroundImage: `url('/background7.png')`}}></div>
     )
 
   } else {
@@ -53,18 +53,18 @@ function Home(props) {
         if (figurado === null)  {
           store.dispatch(GetFigurado(num_id, user))
           return (
-            <div className="home" style={{backgroundImage: `url('/background5.png')`}}></div>
+            <div className="home" style={{backgroundImage: `url('/background7.png')`}}></div>
           )
         } else {
           if (figurado.número !== num_id) {
             store.dispatch(GetFigurado(num_id, user))
             return (
-              <div className="home" style={{backgroundImage: `url('/background5.png')`}}></div>
+              <div className="home" style={{backgroundImage: `url('/background7.png')`}}></div>
             )
           } else {
     
             return (
-              <div className="home" style={{backgroundImage: `url('/background5.png')`}}>
+              <div className="home" style={{backgroundImage: `url('/background7.png')`}}>
                 <Container fluid>
           
                   <Row>

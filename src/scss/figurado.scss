@@ -223,7 +223,7 @@
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                margin-bottom: 2vw;
+                margin-bottom: 1vw;
                 width: 100%;
                 border-radius: 12px;
                 text-align: center;
@@ -286,18 +286,22 @@
     
                 .figurado__palpites__chute__jogador__fechar {
                     display: block;
-                    margin-left: auto;
-                    margin-bottom: 1vw;
+                    text-align: right;
+                    margin-bottom: 0.5vw;
                     padding: 0.25vw;
                     padding-left: 0.75vw;
                     padding-right: 0.75vw;
                     border-radius: 12px;
-                    background-color: $vermelho;
-                    color: $branco;
+                    color: $vermelho;
                     font-weight: 700;
-                    font-size: 0.75vw;
+                    font-size: 1.5vw;
                     border: none;
                     outline: none;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $verde-claro;
+                    }
     
                 }
     
@@ -315,6 +319,7 @@
                     display: block;
                     margin-left: auto;
                     margin-right: auto;
+                    margin-bottom: 1vw;
                     padding: 0.5vw;
                     font-weight: 700;
                     padding-left: 1vw;
@@ -328,6 +333,10 @@
                     border: none;
                     outline: none;
                     
+                    &:hover {
+                        color: $branco;
+                        background-color: $vermelho;
+                    }
                 }
             }
     

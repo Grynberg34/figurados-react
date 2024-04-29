@@ -1,0 +1,103 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+
+.album {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-bottom: 10vw;
+
+    .menu {
+        border-bottom: 0.2vw solid $azul;
+
+        .menu__logo {
+            color: $azul;
+
+            &:hover {
+                color: $vermelho;
+            }
+        }
+    
+        .menu__link {
+            color: $azul;
+
+            &:hover {
+                color: $vermelho;
+            }
+        }
+    
+        .menu__button {
+            color: $vermelho;
+
+            &:hover {
+                color: $azul;
+            }
+        }
+
+    }
+
+    .album__header {
+        padding-top: 6vw;
+
+        .album__header__title {
+            display: block;
+            color: $azul;
+            font-size: 2.5vw;
+            font-weight: 500;
+            margin-bottom: 1vw;
+            text-align: center;
+        }
+
+        .album__header__subtitle {
+            display: block;
+            color: $vermelho;
+            font-size: 1vw;
+            font-weight: 400;
+            margin-bottom: 4vw;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .album__header__info {
+            display: block;
+            color: $azul;
+            font-size: 1vw;
+            font-weight: 500;
+            font-style: italic;
+            margin-bottom: 2vw;
+        }
+
+        .album__header__sort {
+            display: block;
+            color: $azul;
+            font-size: 2.5vw;
+            font-weight: 500;
+            font-style: italic;
+            margin-bottom: 2vw;
+            text-align: right;
+            cursor: pointer;
+
+            &:hover {
+                color: $vermelho;
+            }
+        }
+    }
+
+    .album__figurados {
+
+        .album__figurados__figurado {
+            margin-bottom: 1vw;
+
+            .album__figurados__figurado__img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+}

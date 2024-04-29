@@ -121,6 +121,16 @@ const getFilteredReducer = (filter = null, action) => {
   return filter;
 };
 
+const getAlbumReducer = (album = null, action) => {
+  if (action.type === 'GET_ALBUM') {
+
+    return action.payload;
+    
+  }
+  
+  return album;
+};
+
 
 export default combineReducers({
   jwt: userLogInReducer,
@@ -131,6 +141,6 @@ export default combineReducers({
   figurado: getFiguradoReducer,
   palpites: getPalpitesReducer,
   filter: getFilteredReducer,
-  número: getNúmeroReducer
-
+  número: getNúmeroReducer,
+  album: getAlbumReducer,
 });

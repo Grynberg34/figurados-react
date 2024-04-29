@@ -3,22 +3,40 @@
 
 
 .header {
-    margin-top: 2vw;
+    margin-top: 3vw;
     margin-bottom: 3vw;
 
-    .header__rewind {
+    .header__arrow {
         display: inline-block;
-        width: 9%;
-        margin-right: 0.5vw;
+        color: $verde-claro;
+        font-size: 1.25vw;
+        font-weight: 700;
+        text-decoration: none;
+        margin-top: 0.5vw;
     }   
-    
-    .header__rewind--right {
+
+    .header__arrow__icon {
         display: inline-block;
-        width: 9%;
         margin-right: 0.5vw;
-        transform: rotate(180deg)
     }
 
+    .header__arrow--right {
+        display:  block;
+        margin-right: 0.5vw;
+        color: $verde-claro;
+        font-size: 1.25vw;
+        font-weight: 700;
+        text-decoration: none;
+        margin-top: 0.5vw;
+        text-align: right;
+    }   
+    
+    .header__arrow__icon--right {
+        display: inline-block;
+        margin-left: 0.5vw;
+    }
+
+    
     .header__numero {
         display: inline-block;
         color: $verde-claro;
@@ -29,7 +47,7 @@
     .header__numero--right {
         display: inline-block;
         color: $verde-claro;
-        font-size: 1.75vw;
+        font-size: 1.70vw;
         font-weight: 700;
         text-align: right;
     }
@@ -50,19 +68,16 @@
     .header__ajuda {
         display: block;
         margin-left: auto;
-        color: $azul;
-        font-size: 1.5vw;
+        color: $verde-claro;
+        font-size: 2.5vw;
         font-weight: 700;
-        text-align: center;
-        padding: 0.1vw;
-        border: 0.2vw solid $verde-claro;
+        text-align: right;
         border-radius: 12px;
-        width: 15%;
-        background-color: $verde-claro;
+        cursor: pointer;
+
 
         &:hover {
-            background-color: $azul;
-            color: $verde-claro;
+            color: $vermelho;
         }
 
     }

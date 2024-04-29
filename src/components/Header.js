@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "../scss/header.scss";
+import "../icons/font/flaticon_figurados.scss";
 import moment from 'moment';
 import 'moment/locale/pt-br';
 moment.locale('pt-br')
@@ -34,8 +35,11 @@ function Header(props) {
                 <div>
                   {
                     auth === true ?
-                    <Link to={`/i/${figurado.número -1}`}><h2 className='header__numero'><img className='header__rewind' src="/icons/rewind.png" alt="" />#{figurado.número -1 }</h2></Link>
-                    :<h2 className='header__numero'><img className='header__rewind' src="/icons/rewind.png" alt="" />#{figurado.número -1 }</h2>
+                    <Link className='header__arrow' to={`/i/${figurado.número -1}`}><i className='header__arrow__icon flaticon-rewind-button'></i><h2 className='header__numero'>#{figurado.número -1 }</h2></Link>
+                    :<span>
+                      <i className='header__arrow__icon flaticon-rewind-button'></i>
+                      <h2 className='header__numero'>#{figurado.número -1 }</h2>
+                    </span>
                   }
                 </div>
                 :null 
@@ -48,12 +52,14 @@ function Header(props) {
             
             </Col>
 
-            <Col md={4}>
+            <Col md={2}></Col>
+
+            <Col md={2}>
 
               {
                 auth === true && figurado.número + 1 <= número ?
-                <Link to={`/i/${figurado.número +1}`}><h2 className='header__numero--right'>#{figurado.número + 1 } <img className='header__rewind--right' src="/icons/rewind.png" alt="" /></h2></Link>
-                :<button className='header__ajuda'>?</button>
+                <Link className='header__arrow--right' to={`/i/${figurado.número +1}`}><h2 className='header__numero--right'>#{figurado.número + 1 }</h2><i className='header__arrow__icon--right flaticon-fast-forward'></i></Link>
+                :<i className='header__ajuda flaticon-question'></i>
               }
     
             </Col>
