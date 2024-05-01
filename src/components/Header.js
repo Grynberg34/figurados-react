@@ -97,6 +97,7 @@ function Header(props) {
               <div className='modal-login__google'>
                 <GoogleLogin
                 onSuccess={response => {
+                  handleCloseLogin();
                   store.dispatch(AuthGoogle(response.credential))
                 }}
                 onError={() => {
