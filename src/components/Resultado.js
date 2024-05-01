@@ -38,11 +38,7 @@ function Resultado(props) {
               <Col md={1}></Col>
 
               <Col md={8}>
-                <iframe className='resultado__certo__youtube' src={`https:/www.youtube.com/embed/${figurado.youtube}?`}
-                muted
-                allowFullScreen
-                title='video'
-                />
+                <iframe className='resultado__certo__youtube' src={`https:/www.youtube.com/embed/${figurado.youtube}?`}/>
 
                 <a className='resultado__certo__wikipedia' target='_blank' rel='noreferrer' href={figurado.wikipedia}>página do jogador na wikipedia</a>
 
