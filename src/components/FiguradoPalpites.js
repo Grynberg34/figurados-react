@@ -18,7 +18,7 @@ function FiguradoPalpites(props) {
   let filter = props.filter;
 
   let user = props.user;
-
+  
   function searchJogador(jogador) {
     store.dispatch(FilterJogador(jogador, jogadores));
   }
@@ -51,7 +51,7 @@ function FiguradoPalpites(props) {
         >
           <Container fluid>
             <Row>
-              <Col md={3} xs={4}>
+              <Col md={3} xs={3}>
                 <img
                   className="figurado__palpites__palpite__img"
                   src={palpite.imagem}
@@ -59,7 +59,7 @@ function FiguradoPalpites(props) {
                 />
               </Col>
 
-              <Col md={9} xs={8}>
+              <Col md={9} xs={9}>
                 <h5 className="figurado__palpites__palpite__text">
                   {palpite.opção}
                 </h5>

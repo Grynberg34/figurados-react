@@ -9,6 +9,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Modal from 'react-bootstrap/Modal';
+import YouTube from 'react-youtube';
 import { useState } from 'react';
 import "../scss/album.scss";
 import "../icons/font/flaticon_figurados.scss";
@@ -122,11 +123,8 @@ function Album(props) {
                     <Col md={1}></Col>
 
                     <Col md={7}>
-                      <iframe className='album-modal__youtube' src={`https:/www.youtube.com/embed/${album.active.youtube}?`}
-                      muted
-                      allowFullScreen
-                      title='video'
-                      />
+                    
+                      <YouTube className='album-modal__youtube' videoId={album.active.youtube}/>
 
                       <a className='album-modal__wikipedia' target='_blank' rel='noreferrer' href={album.active.wikipedia}>página do jogador na wikipedia</a>
 

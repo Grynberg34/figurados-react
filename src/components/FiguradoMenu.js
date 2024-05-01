@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { GetPalpites } from '../actions';
 import { store } from '../store';
 
-
 function FiguradoMenu(props) {
 
   let opções = props.opções;
@@ -21,10 +20,28 @@ function FiguradoMenu(props) {
     }
 
     if (window.innerWidth < 768) {
-      window.scroll({
-        top: 340,
-        behavior: 'smooth'
-      });
+
+      console.log(palpites.opções.length)
+
+      if (palpites.opções.length < 3) {
+        window.scrollTo({
+          top: 400,
+          behavior: "smooth",
+        });
+
+      } else if (palpites.opções.length >= 3 && palpites.opções.length < 6 ) {
+        window.scrollTo({
+          top: 800,
+          behavior: "smooth",
+        });
+      } else {
+        window.scrollTo({
+          top: 1200,
+          behavior: "smooth",
+        });
+      }
+
+
     }
 
   }

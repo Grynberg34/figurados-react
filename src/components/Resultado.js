@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "../scss/resultado.scss";
+import YouTube from 'react-youtube';
 
 function Resultado(props) {
   
@@ -38,7 +39,14 @@ function Resultado(props) {
               <Col md={1}></Col>
 
               <Col md={8}>
-                <iframe className='resultado__certo__youtube' src={`https:/www.youtube.com/embed/${figurado.youtube}?`}/>
+
+                
+                <div className='resultado__certo__youtube'>
+                  
+                  <YouTube videoId={figurado.youtube}/>
+
+                </div>
+
 
                 <a className='resultado__certo__wikipedia' target='_blank' rel='noreferrer' href={figurado.wikipedia}>página do jogador na wikipedia</a>
 

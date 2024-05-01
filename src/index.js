@@ -9,6 +9,9 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import {store, persistor} from './store.js';
 import { PersistGate } from 'redux-persist/integration/react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-ZXYDQ45P9V");
 
 
 

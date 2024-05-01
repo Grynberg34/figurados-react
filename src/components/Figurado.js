@@ -12,7 +12,6 @@ function Figurado(props) {
   let figurado = props.figurado;
 
   let mobile = props.mobile;
-
   return (
     <div className='figurado'>
 
