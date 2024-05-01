@@ -10,6 +10,7 @@ function Resultado(props) {
 
   let figurado = props.figurado;
 
+  let auth = props.auth;
   
   if (palpites.chute === true) {
     return (
@@ -21,11 +22,16 @@ function Resultado(props) {
             <Row>
               <Col md={3}>
 
-                <h1 className="resultado__certo__title">acertou!</h1>
+                <h1 className="resultado__certo__title">no gol!</h1>
 
                 <img className='resultado__certo__img' src={figurado.imagem} alt="" />
 
-                <h1 className="resultado__certo__subtitle">cadastre-se ou faça login para adicionar o figurado no álbum</h1>
+                {
+                  auth === true ?
+                  <h1 className="resultado__certo__subtitle">adicionado ao álbum</h1>
+                  :<h1 className="resultado__certo__subtitle">cadastre-se ou faça login para adicionar a figurinha no álbum</h1>
+                }
+
 
               </Col>
 
@@ -72,6 +78,7 @@ function mapStateToProps(state) {
   return {
     figurado: state.figurado,
     palpites: state.palpites,
+    auth: state.auth,
   }
 }
 

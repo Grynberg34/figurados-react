@@ -11,16 +11,11 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
         }
     }).then(async function(response){
 
-
-        console.log(response.data)
-
         var user = {
             id: response.data.id,
             name: response.data.name,
             created: response.data.created
         }
-
-        console.log(user)
 
         if (response.data.id) {
             dispatch({ type: 'CHECK_AUTH', payload: true});
@@ -31,7 +26,7 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
 
                 var palpite = palpites.opções[i];
 
-                palpite.user = user;
+                palpite.user = user.id;
 
                 palpite.figurado = figurado.id;
 
@@ -58,7 +53,6 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
                 id: figurado.número,
                 user: user.id
             }
-
         
             await api.post('jogo/figurado', figurado_new).then( async function(response){
 
@@ -133,6 +127,11 @@ export const LogoutUser = () => async dispatch => {
 
 };
 
+export const CheckMobile = (value) => async dispatch => {
+
+    dispatch({ type: 'CHECK_MOBILE', payload: value });
+};
+
 export const GetNúmero= () => async dispatch => {
 
     await api.get(`/jogo/numero`, {
@@ -158,9 +157,17 @@ export const GetOpções = () => async dispatch => {
 
 export const GetFigurado= (id, user) => async dispatch => {
 
+    var user_id;
+
+    if (user === null) {
+        user_id = null;
+    } else {
+        user_id = user.id
+    }
+
     var figurado = {
         id: id,
-        user: user
+        user: user_id
     }
 
     await api.post('jogo/figurado', figurado).then(function(response){
@@ -204,7 +211,6 @@ export const GetPalpites= (palpite, figurado, user) => async dispatch => {
     
     if (user !== null) {
         await api.post('/jogo/palpite', palpite).then(function(response){
-            console.log(response)
         }).catch(function(err){
             console.log(err.response);
         })
@@ -261,7 +267,7 @@ export const ChutarJogador = (jogador, figurado, user) => async dispatch => {
             certo: jogador === figurado,
             chute: jogador,
             figurado: figurado,
-            user : user
+            user : user.id
         }
 
         await api.post('/jogo/chute', resultado).then(function(response){
@@ -277,12 +283,37 @@ export const GetAlbum = (user) => async dispatch => {
     let data = {
         user: user
     }
-
+    
     await api.post('/jogo/album', data).then(function(response){
-        dispatch({ type: 'GET_ALBUM', payload: response.data});
+
+        var album = {
+            figurados: response.data,
+            asc: true,
+            active: null
+        }
+
+        dispatch({ type: 'GET_ALBUM', payload: album});
 
     }).catch(function(err){
         console.log(err.response);
     })
     
 };
+
+export const SortAlbum = (order, figurados) => async dispatch => {
+
+    var album = {
+        figurados: figurados.reverse(),
+        asc: order,
+        active: null
+    }
+
+    dispatch({ type: 'SORT_ALBUM', payload: album});
+
+};
+
+export const SetModalAlbum = (figurado) => async dispatch => {
+
+    dispatch({ type: 'SET_MODAL', payload: figurado});
+};
+

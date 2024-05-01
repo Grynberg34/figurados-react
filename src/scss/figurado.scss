@@ -9,7 +9,7 @@
     .figurado__dia {
         padding: 2vw;
         padding-bottom: 4vw;
-        border-radius: 12px;
+        border-radius: 0.625vw;
         background-color: rgba($azul, 0.5);
 
         .figurado__dia__title {
@@ -23,7 +23,7 @@
         .figurado__dia__anos {
             padding-top: 1vw;
             background-color: rgba($color: $verde-claro, $alpha: 0.5);
-            border-radius: 12px;
+            border-radius: 0.625vw;
             padding: 1vw;
             padding-top: 2vw;
             height: 8vw;
@@ -49,7 +49,7 @@
         .figurado__dia__dica {
             padding: 1vw;
             background-color: rgba($color: $verde-claro, $alpha: 0.5);
-            border-radius: 12px;
+            border-radius: 0.625vw;
             height: 8vw;
     
             .figurado__dia__dica__text {
@@ -65,7 +65,7 @@
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                border-radius: 12px;
+                border-radius: 0.625vw;
             }
         }
     
@@ -80,7 +80,7 @@
                 text-align: center;
                 padding: 0.5vw;
                 background-color: $azul;
-                border-radius: 12px;
+                border-radius: 0.625vw;
                 border: 0.2vw solid $verde-claro;
             }
 
@@ -89,7 +89,7 @@
                 width: 100%;
                 color: $branco;
                 margin-bottom: 1vw;
-                border-radius: 12px;
+                border-radius: 0.625vw;
                 background: none;
                 outline: none;
 
@@ -110,7 +110,7 @@
     
                     .figurado__dia__menu__items__item__img {
                         width: 100%;
-                        border-radius: 12px;
+                        border-radius: 0.625vw;
                         cursor: pointer;
     
                         &:hover {
@@ -129,7 +129,7 @@
     
                     .figurado__dia__menu__items__item__img {
                         width: 100%;
-                        border-radius: 12px;
+                        border-radius: 0.625vw;
                         padding: 0.1vw;
                         cursor: pointer;
     
@@ -157,7 +157,7 @@
             padding: 1.25vw;
             background-color: rgba($azul, 0.5);
             border: 0.2vw $vermelho solid;
-            border-radius: 12px;
+            border-radius: 0.625vw;
             margin-bottom: 2vw;
     
             .figurado__palpites__erros__numero {
@@ -171,13 +171,13 @@
     
         
         .figurado__palpites__palpite {
-            border-radius: 12px;
+            border-radius: 0.625vw;
             margin-top: 1vw;
             padding: 0.5vw;
     
             .figurado__palpites__palpite__img {
                 width: 100%;
-                border-radius: 12px;
+                border-radius: 0.625vw;
             }
     
             .figurado__palpites__palpite__text {
@@ -197,7 +197,7 @@
             background-color: rgba($roxo, 0.5); 
             padding: 2vw;
             padding-top: 2.5vw;
-            border-radius: 12px;
+            border-radius: 0.625vw;
             margin-top: 2vw;
     
             .figurado__palpites__chute__label {
@@ -225,7 +225,7 @@
                 margin-right: auto;
                 margin-bottom: 1vw;
                 width: 100%;
-                border-radius: 12px;
+                border-radius: 0.625vw;
                 text-align: center;
                 border: none;
                 outline: none;
@@ -244,7 +244,7 @@
                 margin-left: auto;
                 margin-right: auto;
                 margin-bottom: 2vw;
-                border-radius: 12px;
+                border-radius: 0.625vw;
                 background-color: $cinza;
                 list-style: none;
                 max-height: 10vw;
@@ -268,13 +268,13 @@
     
             .figurado__palpites__chute__jogadores::-webkit-scrollbar-track {
                 border: 2px solid $roxo;
-                border-radius: 12px;
+                border-radius: 0.625vw;
             }
                
             .figurado__palpites__chute__jogadores::-webkit-scrollbar-thumb {
                 background-color: $verde-claro;
                 outline: none;
-                border-radius: 12px;
+                border-radius: 0.625vw;
             }
     
             .figurado__palpites__chute__jogadores::-webkit-scrollbar {
@@ -291,7 +291,7 @@
                     padding: 0.25vw;
                     padding-left: 0.75vw;
                     padding-right: 0.75vw;
-                    border-radius: 12px;
+                    border-radius: 0.625vw;
                     color: $vermelho;
                     font-weight: 700;
                     font-size: 1.5vw;
@@ -324,7 +324,7 @@
                     font-weight: 700;
                     padding-left: 1vw;
                     padding-right: 1vw;
-                    border-radius: 36px;
+                    border-radius: 0.625vw;
                     margin-top: 2vw;
                     background-color: $verde-claro;
                     color: $roxo;
@@ -352,7 +352,7 @@
         .figurado__option__items {
             padding: 1vw;
             padding-top: 2vw;
-            border-radius: 12px;
+            border-radius: 0.625vw;
             background-color: rgba($verde-claro, 0.5);
 
             .figurado__option__items__item {
@@ -360,7 +360,7 @@
 
                 .figurado__option__items__item__img {
                     width: 100%;
-                    border-radius: 12px;
+                    border-radius: 0.625vw;
                     cursor: pointer;
 
                     &:hover {
@@ -386,7 +386,7 @@
         }
 
         .figurado__option__items--pos {
-            border-radius: 12px;
+            border-radius: 0.625vw;
             padding-top: 1vw;
             background-color: rgba($verde-claro, 0.5);
 
@@ -395,7 +395,7 @@
 
                 .figurado__option__items__item__img {
                     width: 100%;
-                    border-radius: 12px;
+                    border-radius: 0.625vw;
                     cursor: pointer;
 
                     &:hover {
@@ -414,4 +414,208 @@
 
 .posições {
     margin-bottom: 0;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .figurado {
+        padding-bottom: 20vw;
+
+        .figurado__dia {
+            padding: 0;
+            padding-top: 6vw;
+
+            .figurado__dia__title {
+                font-size: 7vw;
+                margin-bottom: 10vw;
+            }
+
+            .figurado__dia__dica {
+                padding: 4vw;
+                background-color: rgba($color: $verde-claro, $alpha: 0.5);
+                border-radius: 0.625vw;
+                height: 30vw;
+                padding-bottom: 20vw;
+
+                .figurado__dia__dica__text {
+                    font-size: 4vw;
+                    margin-bottom: 4vw;
+                }
+
+                .figurado__dia__dica__img {
+                    width: 50%;
+                }
+            }
+
+            .figurado__dia__anos {
+                height: 30vw;
+
+                .figurado__dia__anos__text {
+                    font-size: 5vw;
+                    margin-bottom: 4vw;
+                }
+
+                .figurado__dia__anos__title {
+                    margin-top: 6vw;
+                    font-size: 5vw;
+                }
+            }
+
+            .figurado__dia__menu {
+                margin-top: 4vw;
+
+                .figurado__dia__menu__title {
+                    font-size: 5vw;
+                    padding: 6vw;
+                    margin-right: 4vw;
+                    margin-left: 4vw;
+                    margin-bottom: 16vw;
+                }
+
+                .figurado__dia__menu__option {
+                    font-size: 5vw;
+                    margin-bottom: 4vw;
+                    margin-top: 8vw;
+                    margin-right: 4vw;
+                    margin-left: 4vw;
+                }
+
+                .figurado__dia__menu__items {
+
+                    .figurado__dia__menu__items__item {
+                        width: 20%;
+                        padding: 2vw;
+                        margin-bottom: 4vw;
+                    }
+
+                    .figurado__dia__menu__items__item--titulo {
+                        width: 25%;
+                        padding: 4vw;
+                    }
+                }
+            }
+        }
+
+
+        .figurado__palpites {
+            position: relative;
+            margin-top: 12vw;
+            padding-left: 4vw;
+            padding-right: 4vw;
+
+    
+            .figurado__palpites__erros {
+                padding: 2vw;
+                border: 0.4vw $vermelho solid;
+                border-radius: 0.625vw;
+                margin-bottom: 8vw;
+        
+                .figurado__palpites__erros__numero {
+                    color: $vermelho;
+                    font-size: 6vw;
+                    font-weight: 500;
+                    margin-bottom: 2vw;
+                    text-align: center;
+                }
+            }
+        
+            
+            .figurado__palpites__palpite {
+                margin-top: 6vw;
+                padding: 4vw;
+        
+                .figurado__palpites__palpite__img {
+                    width: 100%;
+                }
+        
+                .figurado__palpites__palpite__text {
+                    padding-top: 5vw;
+                    font-size: 5vw;
+    
+                }
+            }
+        
+            .figurado__palpites__chute {
+                position: relative;
+                padding: 4vw;
+                padding-top: 6vw;
+                margin-top: 8vw;
+                margin-bottom: 10vw;
+        
+                .figurado__palpites__chute__label {
+                    font-size: 5vw;
+                    margin-bottom: 6vw;
+                }
+    
+                .figurado__palpites__chute__sub {
+                    font-size: 4vw;
+                    margin-bottom: 2vw;
+                }
+        
+                .figurado__palpites__chute__input {
+                    margin-bottom: 4vw;
+                    width: 80%;
+                    font-size: 3vw;
+        
+                }
+        
+                .figurado__palpites__chute__jogadores {
+                    padding: 4vw;
+                    width: 80%;
+                    margin-bottom: 4vw;
+                    max-height: 50vw;
+        
+                    .figurado__palpites__chute__jogadores__jogador {
+                        font-size: 4vw;
+                        margin-bottom: 2vw;
+        
+                        &:hover {
+                            color: $verde-medio;
+                        }
+                    }
+        
+                }
+        
+                .figurado__palpites__chute__jogadores::-webkit-scrollbar-track {
+                    border: 8px solid $roxo;
+                    border-radius: 0.625vw;
+                }
+                   
+                .figurado__palpites__chute__jogadores::-webkit-scrollbar {
+                    width: 4vw;
+                }
+        
+                .figurado__palpites__chute__jogador {
+        
+                    .figurado__palpites__chute__jogador__fechar {
+                        margin-bottom: 4vw;
+                        padding: 0.25vw;
+                        padding-left: 0.75vw;
+                        padding-right: 0.75vw;
+                        font-size: 5vw;
+                    }
+        
+                    .figurado__palpites__chute__jogador__nome {
+                        font-size: 6vw;
+                        font-weight: 500;
+                        margin-bottom: 8vw;
+                    }
+        
+                    .figurado__palpites__chute__jogador__button {
+                        margin-bottom: 4vw;
+                        margin-top: 8vw;
+                        padding: 2vw;
+                        width: 70%;
+                        font-size: 4vw;
+                        
+                    }
+                }
+        
+        
+            }
+    
+        }
+    }
+
 }

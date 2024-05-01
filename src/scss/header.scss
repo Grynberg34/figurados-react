@@ -13,6 +13,7 @@
         font-weight: 700;
         text-decoration: none;
         margin-top: 0.5vw;
+        cursor: pointer;
     }   
 
     .header__arrow__icon {
@@ -72,7 +73,7 @@
         font-size: 2.5vw;
         font-weight: 700;
         text-align: right;
-        border-radius: 12px;
+        border-radius: 0.625vw;
         cursor: pointer;
 
 
@@ -80,6 +81,183 @@
             color: $vermelho;
         }
 
+    }
+
+}
+
+.login-close {
+    color: $verde-claro;
+    font-size: 2vw;
+    text-align: right;
+    cursor: pointer;
+    width: 10%;
+    margin-left: auto;
+
+    &:hover {
+        color: $vermelho;
+    }
+}
+
+.modal-close {
+    color: $verde-claro;
+    font-size: 2vw;
+    text-align: right;
+    cursor: pointer;
+    width: 10%;
+    margin-left: auto;
+
+    &:hover {
+        color: $vermelho;
+    }
+}
+
+
+.modal-login {
+    margin-top: 4vw;
+    padding-left: 15vw;
+    padding-right: 15vw;
+
+    .modal-login__title {
+        color: $branco;
+        font-size: 1.5vw;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 2vw;
+    }
+
+    .modal-login__google {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.modal-help {
+    padding-bottom: 10vw;
+
+    .modal-help__number {
+        color: $verde-claro;
+        font-size: 4vw;
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    .modal-help__number--alt {
+        color: $azul;
+        font-size: 4vw;
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    .modal-help__text {
+        color: $cinza;
+        font-size: 1vw;
+        font-weight: 400;
+        padding-top: 1.5vw;
+        margin-bottom: 2vw;
+    }
+
+    .modal-help__text--alt {
+        color: $cinza-claro;
+        font-size: 1vw;
+        font-weight: 400;
+        padding-top: 1.5vw;
+        margin-bottom: 2vw;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    .header {
+        margin-top: 15vw;
+        margin-bottom: 10vw;
+
+        .header__arrow {
+
+            .header__arrow__icon {
+                font-size: 7vw;
+            }
+
+            .header__numero {
+                display: none;
+            }
+
+        }
+        
+        .header__arrow--right {
+            
+            .header__arrow__icon--right {
+                font-size: 7vw;
+            }
+            
+
+            .header__numero--right {
+                display: none;
+            }
+        }
+
+        .header__title {
+            font-size: 7vw;
+
+        }
+
+        .header__ajuda {
+            font-size: 7vw;
+        }
+    }
+
+    .modal-login {
+        margin-top: 30vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
+    
+        .modal-login__title {
+            font-size: 7vw;
+            margin-bottom: 20vw;
+        }
+    }
+    
+    .modal-help {
+        padding-bottom: 20vw;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    
+        .modal-help__number {
+            font-size: 12vw;
+
+        }
+    
+        .modal-help__number--alt {
+            font-size: 12vw;
+        }
+    
+        .modal-help__text {
+            font-size: 4vw;
+            padding-top: 4vw;
+            margin-bottom: 8vw;
+        }
+    
+        .modal-help__text--alt {
+            font-size: 4vw;
+            padding-top: 4vw;
+            margin-bottom: 8vw;
+        }
+    
+    }
+
+    .login-close {
+        display: block;
+        font-size: 10vw;
+        width: 100%;
+        padding-right: 10vw;
+    }
+    
+    .modal-close {
+        display: block;
+        font-size: 10vw;
+        width: 100%;
+        padding-right: 10vw;
+        margin-bottom: 10vw;
     }
 
 }

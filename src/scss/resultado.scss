@@ -38,17 +38,17 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            color: $branco;
+            color: $azul;
             font-size: 1vw;
             font-weight: 500;
-            margin-bottom: 2vw;
+            margin-bottom: 1vw;
             text-align: center;
             padding: 1vw;
             padding-top: 0.5vw;
             padding-bottom: 0.5vw;
             background-color: $azul;
-            border-radius: 12px;
-            background-color: rgba($verde-claro, 0.8);
+            border-radius: 0.625vw;
+            background-color: $verde-claro;
             width: 50%;
             text-decoration: none;
 
@@ -82,5 +82,78 @@
             margin-bottom: 2vw;
         }
     }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    
+.resultado {
+    padding-bottom: 40vw;
+
+    .resultado__certo {
+        padding-left: 4vw;
+        padding-right: 4vw;
+        
+        .resultado__certo__title {
+            font-size: 14vw;
+            margin-bottom: 12vw;
+            margin-top: 12vw;
+        }
+
+        .resultado__certo__img {
+            display: block;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 8vw;
+        }
+
+        .resultado__certo__subtitle {
+            font-size: 5vw;
+        }
+
+        .resultado__certo__youtube {
+            padding-left: 4vw;
+            padding-right: 4vw;
+            margin-top: 20vw;
+            width: 100%;
+            height: 56.25%;
+            margin-bottom: 14vw;
+        }
+
+        .resultado__certo__wikipedia {
+
+            font-size: 4vw;
+            margin-bottom: 1vw;
+            padding: 4vw;
+            padding-bottom: 4vw;
+            width: 90%;
+
+            &:hover {
+                background-color: rgba($verde-medio, 0.8);
+            }
+
+        }
+
+
+    }
+
+    .resultado__errado {
+        margin-top: 16vw;
+
+        .resultado__errado__title {
+            font-size: 10vw;
+            margin-bottom: 12vw;
+        }
+
+        .resultado__errado__subtitle {
+            font-size: 4.4vw;
+            font-weight: 400;
+            margin-bottom: 2vw;
+        }
+    }
+
+}
 
 }

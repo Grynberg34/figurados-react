@@ -4,7 +4,7 @@ import "../scss/menu.scss";
 import { AuthGoogle } from '../actions';
 import { CheckAuth } from '../actions';
 import { GoogleLogin } from '@react-oauth/google';
-import { Link, Navigate } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import { LogoutUser } from '../actions';
 import Row from 'react-bootstrap/Row';
@@ -38,7 +38,7 @@ function Menu(props) {
   
           <Row>
             <Col md={4}>
-              <a className="menu__logo" href="/">figurados.com.br</a>
+              <Link className="menu__logo" to="/">figurados</Link>
             </Col>
   
             <Col md={2}>
@@ -46,11 +46,11 @@ function Menu(props) {
             </Col>
   
             <Col md={2} xs={4}>
-              <Link className="menu__link" to="/">jogar</Link>
+              <NavLink className="menu__link" to="/">jogar</NavLink>
             </Col>
     
             <Col md={2} xs={4}>
-              <Link className="menu__link" to="/album">álbum</Link>
+              <NavLink className="menu__link" to="/album">álbum</NavLink>
             </Col>
 
             <Col md={2} xs={4}>
@@ -71,7 +71,7 @@ function Menu(props) {
   
           <Row>
             <Col md={4}>
-              <a className="menu__logo" href="/">figurados.com.br</a>
+              <a className="menu__logo" href="/">figurados</a>
             </Col>
   
             <Col md={5}>

@@ -28,12 +28,16 @@
                 color: $vermelho;
             }
         }
+
+        .active {
+            color: $vermelho;
+        }
     
         .menu__button {
-            color: $vermelho;
+            color: $azul;
 
             &:hover {
-                color: $azul;
+                color: $vermelho;
             }
         }
 
@@ -71,19 +75,54 @@
         }
 
         .album__header__sort {
-            display: block;
-            color: $azul;
-            font-size: 2.5vw;
-            font-weight: 500;
-            font-style: italic;
-            margin-bottom: 2vw;
             text-align: right;
-            cursor: pointer;
 
-            &:hover {
-                color: $vermelho;
+            .album__header__sort__icon {
+                display: inline-block;
+                color: $azul;
+                font-size: 1vw;
+                font-weight: 500;
+                font-style: italic;
+                margin-left: auto;
+                margin-bottom: 2vw;
+                margin-left: auto;
+                cursor: pointer;
+                margin-right: 1vw;
+                padding-left: 0.5vw;
+                padding-right: 0.5vw;
+                border-radius: 0.625vw;
+                border: 0.15vw solid $azul;
+    
+                &:hover {
+                    color: $vermelho;
+                    border: 0.15vw solid $vermelho;
+                }
             }
+    
+            .album__header__sort__icon--active {
+                display: inline-block;
+                color: $branco;
+                font-size: 1vw;
+                font-weight: 500;
+                font-style: italic;
+                margin-bottom: 2vw;
+                margin-left: auto;
+                margin-left: auto;
+                cursor: pointer;
+                border-radius: 0.625vw;
+                background-color: $vermelho;
+                margin-right: 1vw;
+                padding-left: 0.5vw;
+                padding-right: 0.5vw;
+                border: 0.15vw solid $vermelho;
+    
+                &:hover {
+                    color: $branco;
+                }
+            }
+
         }
+
     }
 
     .album__figurados {
@@ -100,4 +139,193 @@
             }
         }
     }
+
+
+}
+
+
+.album-modal {
+
+    .album-modal__title {
+        font-size: 2.5vw;
+        color: $branco;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 4vw;
+    }
+
+    .album-modal__number {
+        color: $verde-claro;
+    }
+
+    .album-modal__img {
+        width: 100%;
+    }
+
+    .album-modal__youtube {
+        width: 100%;
+        height: 80%;
+        margin-bottom: 1vw;
+    }
+
+    .album-modal__wikipedia {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        color: $azul;
+        font-size: 1vw;
+        font-weight: 500;
+        margin-bottom: 2vw;
+        text-align: center;
+        padding: 1vw;
+        padding-top: 0.25vw;
+        padding-bottom: 0.25vw;
+        border-radius: 0.625vw;
+        background-color: rgba($verde-claro, 1);
+        width: 75%;
+        text-decoration: none;
+
+        &:hover {
+            background-color: rgba($vermelho, 1);
+        }
+
+    }
+
+
+}
+
+.close {
+    color: $verde-claro;
+    font-size: 2vw;
+    text-align: right;
+    cursor: pointer;
+    width: 10%;
+    margin-left: auto;
+
+    &:hover {
+        color: $vermelho;
+    }
+}
+
+.modal-content {
+    margin-top: 6vw;
+    background: none !important;
+    border: none !important;
+
+}
+
+.modal.show .modal-dialog {
+    min-width: 50vw;
+}
+
+.modal-backdrop {
+    --bs-backdrop-opacity: 0.95 !important;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .album {
+        padding-bottom: 40vw;
+
+        .album__header {
+            padding-top: 20vw;
+            padding-left: 4vw;
+            padding-right: 4vw;
+    
+            .album__header__title {
+                font-size: 7vw;
+                margin-bottom: 8vw;
+            }
+    
+            .album__header__subtitle {
+                font-size: 4vw;
+                margin-bottom: 16vw;
+            }
+    
+            .album__header__info {
+                font-size: 4vw;
+                margin-bottom: 16vw;
+            }
+    
+            .album__header__sort {
+    
+                .album__header__sort__icon {
+                    font-size: 6vw;
+                    margin-right: 3vw;
+                    padding-left: 0.5vw;
+                    padding-right: 0.5vw;
+                    border: 0.15vw solid $azul;
+                }
+        
+                .album__header__sort__icon--active {
+                    font-size: 6vw;
+                    margin-right: 3vw;
+                    padding-left: 0.5vw;
+                    padding-right: 0.5vw;
+                    border: 0.15vw solid $vermelho;
+                }
+    
+            }
+    
+        }
+    
+        .album__figurados {
+            padding-left: 4vw;
+            padding-right: 4vw;
+    
+            .album__figurados__figurado {
+                margin-bottom: 6vw;
+            }
+        }
+    
+    
+    }
+    
+    
+    .album-modal {
+        padding-left: 8vw;
+        padding-right: 8vw;
+        padding-bottom: 60vw;
+    
+        .album-modal__title {
+            font-size: 8vw;
+            margin-bottom: 10vw;
+        }
+
+        .album-modal__img {
+            margin-bottom: 20vw;
+        }
+
+        .album-modal__youtube {
+            margin-bottom: 10vw;
+            height: 80%;
+        }
+    
+        .album-modal__wikipedia {
+            font-size: 4vw;
+            margin-bottom: 2vw;
+            padding: 4vw;
+            width: 100%;
+    
+        }
+    
+    
+    }
+    
+    .close {
+        display: block;
+        font-size: 10vw;
+        width: 100%;
+        padding-right: 10vw;
+        padding-bottom: 10vw;
+    }
+    
+    .modal-content {
+        margin-top: 12vw;
+    }
+    
+    .modal.show .modal-dialog {
+        min-width: 50vw;
+    }
+
 }

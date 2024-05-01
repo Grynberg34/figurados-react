@@ -36,11 +36,15 @@
         }
     }
 
+    .active {
+        color: $verde-claro;
+    }
+
     .menu__button {
         display: block;
         padding-top: 1vw;
         font-size: 1.1vw;
-        color: $verde-claro;
+        color: $branco;
         text-decoration: none;
         font-weight: 400;
         background: none;
@@ -49,7 +53,39 @@
         margin-left: auto;
 
         &:hover {
-            color: $branco;
+            color: $verde-claro;
         }
     }
 }
+
+@media only screen and (max-width: 767px) {
+
+    .menu {
+        padding-top: 20vw;
+        padding-bottom: 10vw;
+        border-bottom: 0.2vw solid $branco;
+
+        .menu__logo {
+            display: block;
+            text-align: center;
+            font-size: 10vw;
+            margin-bottom: 10vw;
+        }
+
+        .menu__google {
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu__link {
+            text-align: center;
+            font-size: 5vw;
+        }
+
+        .menu__button {
+            margin-right: auto;
+            font-size: 5vw;
+        }
+    }
+
+} 

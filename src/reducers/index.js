@@ -122,13 +122,30 @@ const getFilteredReducer = (filter = null, action) => {
 };
 
 const getAlbumReducer = (album = null, action) => {
-  if (action.type === 'GET_ALBUM') {
+  switch (action.type) { 
+    case 'GET_ALBUM':
+      return action.payload
+    case 'SORT_ALBUM':
+      return action.payload
+    case 'SET_MODAL':
+      return {
+        ...album,
+        active: action.payload
+      }
+    default:
+      return album;
+  }
+  
+};
+
+const checkMobileReducer = (mobile = false, action) => {
+  if (action.type === 'CHECK_MOBILE') {
 
     return action.payload;
     
   }
   
-  return album;
+  return mobile;
 };
 
 
@@ -143,4 +160,5 @@ export default combineReducers({
   filter: getFilteredReducer,
   número: getNúmeroReducer,
   album: getAlbumReducer,
+  mobile: checkMobileReducer
 });
