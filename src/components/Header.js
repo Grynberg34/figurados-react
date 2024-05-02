@@ -119,7 +119,7 @@ function Header(props) {
                 </Col>
 
                 <Col md={10} xs={10}>
-                  <h3 className="modal-help__text">O objetivo do jogo é descobrir a cada dia um jogador aposentado do futebol brasileiro</h3>
+                  <h3 className="modal-help__text">O objetivo do jogo é descobrir um jogador aposentado do futebol brasileiro.</h3>
                 </Col>
 
                 <Col md={2} xs={2}>
@@ -127,7 +127,7 @@ function Header(props) {
                 </Col>
 
                 <Col md={10} xs={10}>
-                  <h3 className="modal-help__text--alt">Você terá duas dicas iniciais: a duração da carreira e mais uma dica que pode ser a posição que o jogador atuava, um time pelo qual atual ou um título que conquistou</h3>
+                  <h3 className="modal-help__text--alt">Você terá duas dicas iniciais: a duração da carreira do jogador e mais uma dica que pode ser a posição que ele atuava, um time pelo qual atual ou um título que conquistou</h3>
                 </Col>
 
                 <Col md={2} xs={2}>
@@ -135,7 +135,7 @@ function Header(props) {
                 </Col>
 
                 <Col md={10} xs={10}>
-                  <h3 className="modal-help__text">Para obter mais dicas, clique em uma posição, um time ou um título. Em caso de dica correta ela aparecerá em verde e caso for errada aparecerá em vermelho</h3>
+                  <h3 className="modal-help__text">Para obter mais dicas, clique em uma posição, um time ou um título. Se a dica for correta ela aparecerá em verde (ex: aquele jogador atuou por aquela equipe) e caso for errada aparecerá em vermelho</h3>
                 </Col>
 
                 <Col md={2} xs={2}>
@@ -151,7 +151,7 @@ function Header(props) {
                 </Col>
 
                 <Col md={10} xs={10}>
-                  <h3 className="modal-help__text">Você só tem uma tentativa para tentar acertar o jogador. Para escolher sua resposta, digite o nome do jogador e o selecione na lista que aparecerá abaixo clicando no seu nome. Em seguida, clique em ‘chutar para o gol’ e veja se acertou</h3>
+                  <h3 className="modal-help__text">Você tem uma tentativa para tentar acertar o jogador. Para escolher sua resposta, digite o nome do jogador e o selecione clicando no seu nome na lista que aparecerá. Clique em ‘chutar para o gol’ e veja se acertou</h3>
                 </Col>
 
                 <Col md={2} xs={2}>
@@ -159,7 +159,7 @@ function Header(props) {
                 </Col>
 
                 <Col md={10} xs={10}>
-                  <h3 className="modal-help__text--alt">Em caso de acerto, você ganhará a figurinha do jogador para adicionar ao seu álbum</h3>
+                  <h3 className="modal-help__text--alt">Se acertar, você ganhará a figurinha do jogador para adicionar ao seu álbum</h3>
                 </Col>
 
               </Row>
