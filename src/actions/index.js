@@ -7,7 +7,8 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
 
     await api.get('/auth/user', {
         headers: {
-          'Authorization': `Bearer ${token}` 
+          'Authorization': `Bearer ${token}`,
+          "Access-Control-Allow-Origin": "*",
         }
     }).then(async function(response){
 
@@ -32,7 +33,7 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
 
                 palpite.figurado = figurado.id;
 
-                await api.post('/jogo/palpite', palpite, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then( async function(response){
+                await api.post('/jogo/palpite', palpite, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*"}}).then( async function(response){
                     console.log(response)
                 }).catch(function(err){
                     console.log(err.response);
@@ -47,7 +48,7 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
                     user : user.id
                 }
 
-                await api.post('/jogo/chute', resultado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).catch(function(err){
+                await api.post('/jogo/chute', resultado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*"}}).catch(function(err){
                     console.log(err.response);
                 })
             }
@@ -58,7 +59,7 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
                 user: user.id
             }
         
-            await api.post('jogo/figurado',  figurado_new, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then( async function(response){
+            await api.post('jogo/figurado',  figurado_new, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*"}}).then( async function(response){
 
                 var palpites = response.data.palpites;
         
@@ -80,7 +81,7 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
                         user : user.id
                     }
             
-                    await api.post('/jogo/chute', resultado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).catch(function(err){
+                    await api.post('/jogo/chute', resultado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*"}}).catch(function(err){
                         console.log(err.response);
                     })
 
@@ -112,7 +113,7 @@ export const AuthGoogle = (credential) => async dispatch => {
 
     await api.post('/auth/google/signin', {
         profile: decoded
-    },{headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then(function(response){
+    },{headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*"}}).then(function(response){
 
         dispatch({ type: 'LOGIN_USER', payload: response.data.token });
 
@@ -138,7 +139,7 @@ export const CheckMobile = (value) => async dispatch => {
 
 export const GetNúmero= () => async dispatch => {
 
-    await api.get(`/jogo/numero`, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}, {
+    await api.get(`/jogo/numero`, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*"}}, {
     }).then(async function(response){
         dispatch({ type: 'GET_NÚMERO', payload: response.data });
     })  
@@ -149,7 +150,7 @@ export const GetNúmero= () => async dispatch => {
 };
 
 export const GetOpções = () => async dispatch => {
-    await api.get('/jogo/todos', {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}},  {
+    await api.get('/jogo/todos', {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*"}},  {
     }).then(async function(response){
         dispatch({ type: 'GET_OPCOES', payload: response.data.opções });
         dispatch({ type: 'GET_JOGADORES', payload: response.data.jogadores });
@@ -174,7 +175,7 @@ export const GetFigurado= (id, user) => async dispatch => {
         user: user_id
     }
 
-    await api.post('jogo/figurado', figurado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}},).then(function(response){
+    await api.post('jogo/figurado', figurado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*"}},).then(function(response){
 
         var palpites = response.data.palpites;
 
@@ -218,7 +219,7 @@ export const GetPalpites= (palpite, figurado, user) => async dispatch => {
     }
     
     if (user !== null) {
-        await api.post('/jogo/palpite', palpite, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then(function(response){
+        await api.post('/jogo/palpite', palpite, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*",}}).then(function(response){
         }).catch(function(err){
             console.log(err.response);
         })
@@ -278,7 +279,7 @@ export const ChutarJogador = (jogador, figurado, user) => async dispatch => {
             user : user.id
         }
 
-        await api.post('/jogo/chute',  resultado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then(function(response){
+        await api.post('/jogo/chute',  resultado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*",}}).then(function(response){
 
         }).catch(function(err){
             console.log(err.response);
@@ -292,7 +293,7 @@ export const GetAlbum = (user) => async dispatch => {
         user: user
     }
     
-    await api.post('/jogo/album', data, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then(function(response){
+    await api.post('/jogo/album', data, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*",}}).then(function(response){
 
         var album = {
             figurados: response.data,
