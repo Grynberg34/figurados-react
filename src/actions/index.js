@@ -24,13 +24,17 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
 
             for (let i = 0; i < palpites.opções.length; i++) {
 
-                var palpite = palpites.opções[i];
+                let palpite = palpites.opções[i];
 
                 palpite.user = user.id;
 
+                console.log(user.id)
+
                 palpite.figurado = figurado.id;
 
-                await api.post('/jogo/palpite', palpite).catch(function(err){
+                await api.post('/jogo/palpite', palpite, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then( async function(response){
+                    console.log(response)
+                }).catch(function(err){
                     console.log(err.response);
                 })
             }
@@ -43,7 +47,7 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
                     user : user.id
                 }
 
-                await api.post('/jogo/chute', resultado).catch(function(err){
+                await api.post('/jogo/chute', resultado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).catch(function(err){
                     console.log(err.response);
                 })
             }
@@ -54,7 +58,7 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
                 user: user.id
             }
         
-            await api.post('jogo/figurado', figurado_new).then( async function(response){
+            await api.post('jogo/figurado',  figurado_new, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then( async function(response){
 
                 var palpites = response.data.palpites;
         
@@ -76,7 +80,7 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
                         user : user.id
                     }
             
-                    await api.post('/jogo/chute', resultado).catch(function(err){
+                    await api.post('/jogo/chute', resultado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).catch(function(err){
                         console.log(err.response);
                     })
 
@@ -108,7 +112,7 @@ export const AuthGoogle = (credential) => async dispatch => {
 
     await api.post('/auth/google/signin', {
         profile: decoded
-    }).then(function(response){
+    },{headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then(function(response){
 
         dispatch({ type: 'LOGIN_USER', payload: response.data.token });
 
@@ -134,7 +138,7 @@ export const CheckMobile = (value) => async dispatch => {
 
 export const GetNúmero= () => async dispatch => {
 
-    await api.get(`/jogo/numero`, {
+    await api.get(`/jogo/numero`, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}, {
     }).then(async function(response){
         dispatch({ type: 'GET_NÚMERO', payload: response.data });
     })  
@@ -145,7 +149,7 @@ export const GetNúmero= () => async dispatch => {
 };
 
 export const GetOpções = () => async dispatch => {
-    await api.get('/jogo/todos', {
+    await api.get('/jogo/todos', {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}},  {
     }).then(async function(response){
         dispatch({ type: 'GET_OPCOES', payload: response.data.opções });
         dispatch({ type: 'GET_JOGADORES', payload: response.data.jogadores });
@@ -170,7 +174,7 @@ export const GetFigurado= (id, user) => async dispatch => {
         user: user_id
     }
 
-    await api.post('jogo/figurado', figurado).then(function(response){
+    await api.post('jogo/figurado', figurado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}},).then(function(response){
 
         var palpites = response.data.palpites;
 
@@ -187,6 +191,7 @@ export const GetFigurado= (id, user) => async dispatch => {
         dispatch({ type: 'GET_FIGURADO', payload: response.data });
 
     }).catch(function(err){
+        console.log(process.env.REACT_APP_TOKEN)
         console.log(err);
     })
     
@@ -208,9 +213,13 @@ export const GetPalpites= (palpite, figurado, user) => async dispatch => {
         palpite.certo = true;
         dispatch({ type: 'SET_PALPITES', payload: palpite });
     }
+
+    if (user === undefined) {
+        user = null
+    }
     
     if (user !== null) {
-        await api.post('/jogo/palpite', palpite).then(function(response){
+        await api.post('/jogo/palpite', palpite, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then(function(response){
         }).catch(function(err){
             console.log(err.response);
         })
@@ -270,7 +279,7 @@ export const ChutarJogador = (jogador, figurado, user) => async dispatch => {
             user : user.id
         }
 
-        await api.post('/jogo/chute', resultado).then(function(response){
+        await api.post('/jogo/chute',  resultado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then(function(response){
 
         }).catch(function(err){
             console.log(err.response);
@@ -284,7 +293,7 @@ export const GetAlbum = (user) => async dispatch => {
         user: user
     }
     
-    await api.post('/jogo/album', data).then(function(response){
+    await api.post('/jogo/album', data, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`}}).then(function(response){
 
         var album = {
             figurados: response.data,
