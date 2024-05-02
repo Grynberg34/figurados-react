@@ -135,7 +135,7 @@ function Header(props) {
                 </Col>
 
                 <Col md={10} xs={10}>
-                  <h3 className="modal-help__text">Para obter mais dicas, clique em uma posição, um time ou um título. Se a dica for correta ela aparecerá em verde (ex: o jogador atuour por esse time) e caso for errada aparecerá em vermelho (ex: o jogador não ganhou aquele tíutulo)</h3>
+                  <h3 className="modal-help__text">Para obter mais dicas, clique em uma posição, um time ou um título. Se a dica for correta ela aparecerá em verde (ex: o jogador atuou por esse time) e caso for errada aparecerá em vermelho (ex: o jogador não ganhou aquele título)</h3>
                 </Col>
 
                 <Col md={2} xs={2}>
