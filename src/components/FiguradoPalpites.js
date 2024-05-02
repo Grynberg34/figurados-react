@@ -39,7 +39,7 @@ function FiguradoPalpites(props) {
     <div className="figurado__palpites">
       <div className="figurado__palpites__erros">
         <h4 className="figurado__palpites__erros__numero">
-          {palpites.erros} erros restantes
+          {palpites.erros} dicas erradas restantes
         </h4>
       </div>
 
