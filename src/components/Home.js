@@ -45,7 +45,9 @@ function Home(props) {
       num_id = número;
     } 
 
-    if (auth === false && num_id !== número) {
+    console.log(num_id > número)
+
+    if ((auth === false && num_id !== número) || num_id > número) {
       return (
         <Navigate to={`/i/${número}`} />
       )

@@ -191,7 +191,6 @@ export const GetFigurado= (id, user) => async dispatch => {
         dispatch({ type: 'GET_FIGURADO', payload: response.data });
 
     }).catch(function(err){
-        console.log(process.env.REACT_APP_TOKEN)
         console.log(err);
     })
     
