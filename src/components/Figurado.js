@@ -11,8 +11,6 @@ function Figurado(props) {
 
   let figurado = props.figurado;
 
-  console.log(figurado?.dica_2)
-
   let mobile = props.mobile;
   return (
     <div className='figurado'>
