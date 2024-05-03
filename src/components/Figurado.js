@@ -25,12 +25,6 @@ function Figurado(props) {
               
               <Container fluid>
                 <Row>
-                <Col md={6} xs={6}>
-                    <div className='figurado__dia__dica'>
-                      <h3 className='figurado__dia__dica__text'>{figurado.dica_2.texto}</h3>
-                      <img className='figurado__dia__dica__img' src={figurado.dica_2.imagem} alt="" />
-                    </div>
-                  </Col>
               
                   <Col md={6} xs={6}>
                     <div className='figurado__dia__dica'>
@@ -39,6 +33,12 @@ function Figurado(props) {
                     </div>
                   </Col>
 
+                  <Col md={6} xs={6}>
+                    <div className='figurado__dia__dica'>
+                      <h3 className='figurado__dia__dica__text'>{figurado.dica_2.texto}</h3>
+                      <img className='figurado__dia__dica__img' src={figurado.dica_2.imagem} alt="" />
+                    </div>
+                  </Col>
                 </Row>
               </Container>
 
