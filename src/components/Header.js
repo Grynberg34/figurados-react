@@ -127,7 +127,7 @@ function Header(props) {
                 </Col>
 
                 <Col md={10} xs={10}>
-                  <h3 className="modal-help__text--alt">Você terá duas dicas iniciais: a duração da carreira do jogador e mais uma dica que pode ser a posição que ele atuava, um time pelo qual atual ou um título que conquistou</h3>
+                  <h3 className="modal-help__text--alt">Você terá duas dicas iniciais. Cada dica pode ser ou um time pelo qual o jogador atuou, ou a posição que jogava ou um título que conquistou</h3>
                 </Col>
 
                 <Col md={2} xs={2}>

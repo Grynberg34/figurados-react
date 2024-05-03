@@ -11,6 +11,8 @@ function Figurado(props) {
 
   let figurado = props.figurado;
 
+  console.log(figurado?.dica_2)
+
   let mobile = props.mobile;
   return (
     <div className='figurado'>
@@ -25,10 +27,10 @@ function Figurado(props) {
               
               <Container fluid>
                 <Row>
-                  <Col md={6} xs={6}>
-                    <div className='figurado__dia__anos'>
-                      <h2 className='figurado__dia__anos__title'>jogou de</h2>
-                      <h3 className='figurado__dia__anos__text'>{figurado.anos}</h3>
+                <Col md={6} xs={6}>
+                    <div className='figurado__dia__dica'>
+                      <h3 className='figurado__dia__dica__text'>{figurado.dica_2.texto}</h3>
+                      <img className='figurado__dia__dica__img' src={figurado.dica_2.imagem} alt="" />
                     </div>
                   </Col>
               
