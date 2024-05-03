@@ -23,6 +23,8 @@ function Header(props) {
 
   let número = props.número;
 
+  let mobile = props.mobile;
+
   if (window.innerWidth < 768) {
     store.dispatch(CheckMobile(true))
   }
@@ -112,58 +114,12 @@ function Header(props) {
           <i className="modal-close flaticon-cancel" onClick={handleCloseHelp}></i>
           <div className='modal-help'>
 
-            <Container fluid>
-              <Row>
-                <Col md={2} xs={2}>
-                  <h2 className="modal-help__number">1</h2>
-                </Col>
+            {
+              mobile === false ?
+              <img className='modal-help__img' src="/ajuda.png" alt="" />
+              :<img className='modal-help__img' src="/ajuda-mobile.png" alt="" />
+            }
 
-                <Col md={10} xs={10}>
-                  <h3 className="modal-help__text">O objetivo do jogo é descobrir a cada dia um jogador aposentado do futebol brasileiro.</h3>
-                </Col>
-
-                <Col md={2} xs={2}>
-                  <h2 className="modal-help__number--alt">2</h2>
-                </Col>
-
-                <Col md={10} xs={10}>
-                  <h3 className="modal-help__text--alt">Você terá duas dicas iniciais. Cada dica pode ser ou um time pelo qual o jogador atuou, ou a posição que jogava ou um título que conquistou</h3>
-                </Col>
-
-                <Col md={2} xs={2}>
-                  <h2 className="modal-help__number">3</h2>
-                </Col>
-
-                <Col md={10} xs={10}>
-                  <h3 className="modal-help__text">Para obter mais dicas, clique em uma posição, um time ou um título. Se a dica for correta ela aparecerá em verde (ex: o jogador atuou por esse time) e caso for errada aparecerá em vermelho (ex: o jogador não ganhou aquele título)</h3>
-                </Col>
-
-                <Col md={2} xs={2}>
-                  <h2 className="modal-help__number--alt">4</h2>
-                </Col>
-
-                <Col md={10} xs={10}>
-                  <h3 className="modal-help__text--alt">Você pode tentar novas dicas até completar 7 dicas erradas. Caso isso aconteça, você não poderá obter mais dicas e deverá chutar o jogador com as dicas que tiver até o momento</h3>
-                </Col>
-
-                <Col md={2} xs={2}>
-                  <h2 className="modal-help__number">5</h2>
-                </Col>
-
-                <Col md={10} xs={10}>
-                  <h3 className="modal-help__text">Você tem apenas uma tentativa para tentar acertar o jogador. Para escolher sua resposta, digite o nome do jogador e o selecione clicando no seu nome na lista que aparecerá. Clique em ‘chutar para o gol’ e veja se acertou</h3>
-                </Col>
-
-                <Col md={2} xs={2}>
-                  <h2 className="modal-help__number--alt">6</h2>
-                </Col>
-
-                <Col md={10} xs={10}>
-                  <h3 className="modal-help__text--alt">Se acertar, você ganhará a figurinha do jogador para adicionar ao seu álbum</h3>
-                </Col>
-
-              </Row>
-            </Container>
 
           </div>
         </Modal>
@@ -183,6 +139,7 @@ function mapStateToProps(state) {
     figurado: state.figurado,
     auth: state.auth,
     número: state.número,
+    mobile: state.mobile,
   }
 }
 
