@@ -23,8 +23,6 @@ function Header(props) {
 
   let número = props.número;
 
-  let mobile = props.mobile;
-
   if (window.innerWidth < 768) {
     store.dispatch(CheckMobile(true))
   }
@@ -114,12 +112,7 @@ function Header(props) {
           <i className="modal-close flaticon-cancel" onClick={handleCloseHelp}></i>
           <div className='modal-help'>
 
-            {
-              mobile === false ?
-              <img className='modal-help__img' src="/ajuda.png" alt="" />
-              :<img className='modal-help__img' src="/ajuda-mobile.png" alt="" />
-            }
-
+            <img className='modal-help__img' src="/ajuda.png" alt="" />
 
           </div>
         </Modal>
