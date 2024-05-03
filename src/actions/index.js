@@ -210,6 +210,8 @@ export const GetPalpites= (palpite, figurado, user) => async dispatch => {
         dispatch({ type: 'SET_PALPITES', payload: palpite });
         
     } else {
+        dispatch({ type: 'SET_ERROS', payload: -1 });
+
         palpite.certo = true;
         dispatch({ type: 'SET_PALPITES', payload: palpite });
     }
