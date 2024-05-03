@@ -25,6 +25,12 @@
             font-style: italic;
             text-align: center;
             line-height: 1.5;
+            margin-bottom: 2vw;
+        }
+
+        .resultado__certo__google {
+            display: flex;
+            justify-content: center;
         }
 
         .resultado__certo__youtube {
@@ -63,7 +69,7 @@
     }
 
     .resultado__errado {
-        margin-top: 8vw;
+        margin-top: 6vw;
 
         .resultado__errado__title {
             color: $vermelho;
@@ -81,6 +87,31 @@
             text-align: center;
             line-height: 1.5;
             margin-bottom: 2vw;
+        }
+
+        .resultado__errado__login {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1vw;
+            border: 0.2vw solid $vermelho;
+            border-radius: 0.625vw;
+            width: 30%;
+            margin-top: 4vw;
+
+            .resultado__errado__login__text {
+                color: $vermelho;
+                font-size: 1.25vw;
+                font-weight: 700;
+                font-style: italic;
+                text-align: center;
+                line-height: 1.5;
+                margin-bottom: 1vw;
+            }
+
+            .resultado__errado__login__google {
+                display: flex;
+                justify-content: center;
+            }
         }
     }
 
@@ -117,6 +148,7 @@
 
             .resultado__certo__subtitle {
                 font-size: 5vw;
+                margin-bottom: 6vw;
             }
 
             .resultado__certo__youtube {
@@ -154,7 +186,25 @@
             .resultado__errado__subtitle {
                 font-size: 4.4vw;
                 font-weight: 400;
-                margin-bottom: 2vw;
+                margin-bottom: 12vw;
+            }
+
+            .resultado__errado__login {
+                padding: 4vw;
+                border: 0.2vw solid $vermelho;
+                width: 80%;
+                margin-top: 4vw;
+    
+                .resultado__errado__login__text {
+                    font-size: 4vw;
+                    margin-bottom: 4vw;
+                }
+    
+                .resultado__errado__login__google {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 4vw;
+                }
             }
         }
 

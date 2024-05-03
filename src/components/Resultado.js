@@ -3,6 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "../scss/resultado.scss";
+import { GoogleLogin } from '@react-oauth/google';
+import { AuthGoogle } from '../actions';
+import { store } from '../store';
 import YouTube from 'react-youtube';
 
 function Resultado(props) {
@@ -30,7 +33,19 @@ function Resultado(props) {
                 {
                   auth === true ?
                   <h1 className="resultado__certo__subtitle">adicionado ao álbum</h1>
-                  :<h1 className="resultado__certo__subtitle">cadastre-se ou faça login para adicionar a figurinha no álbum</h1>
+                  :<div>
+                    <h1 className="resultado__certo__subtitle">cadastre-se ou faça login para adicionar a figurinha no álbum e jogar os números anteriores</h1>
+                    <div className='resultado__certo__google'>
+                      <GoogleLogin
+                      onSuccess={response => {
+                        store.dispatch(AuthGoogle(response.credential))
+                      }}
+                      onError={() => {
+                        console.log('Login failed');
+                      }}
+                      />
+                    </div>
+                  </div>
                 }
 
 
@@ -68,6 +83,24 @@ function Resultado(props) {
           <h1 className="resultado__errado__title">pra fora!</h1>        
           <h2 className="resultado__errado__subtitle">você chutou {palpites.jogador.nome}</h2>
           <h2 className="resultado__errado__subtitle">a resposta correta era {figurado.nome}</h2>
+
+          {
+            auth === false ?
+            <div className='resultado__errado__login'>
+              <h2 className="resultado__errado__login__text">cadastre-se ou faça login para jogar os números anteriores</h2>
+              <div className='resultado__errado__login__google'>
+                <GoogleLogin
+                onSuccess={response => {
+                  store.dispatch(AuthGoogle(response.credential))
+                }}
+                onError={() => {
+                  console.log('Login failed');
+                }}
+                />
+              </div>
+            </div>
+            :null
+          }
 
         </div>
 
