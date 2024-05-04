@@ -83,7 +83,7 @@ function Header(props) {
                 <div>
                   <Link className='header__arrow--right' to={`/i/${figurado.número +1}`}><h2 className='header__numero--right'>#{figurado.número + 1 }</h2><i className='header__arrow__icon--right flaticon-fast-forward'></i></Link>
                 </div>
-                :<i onClick={() => handleShowHelp()} className='header__ajuda flaticon-question bounce-in-top'></i>
+                :<h2 onClick={() => handleShowHelp()} className='header__ajuda bounce-in-top'>regras</h2>
               }
     
             </Col>

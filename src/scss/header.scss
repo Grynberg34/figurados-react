@@ -70,16 +70,19 @@
     .header__ajuda {
         display: block;
         margin-left: auto;
-        color: $amarelo;
-        font-size: 3vw;
+        color: #0d3080;
+        padding: 0.5vw;
+        font-size: 1vw;
         font-weight: 700;
-        text-align: right;
+        text-align: center;
         border-radius: 0.625vw;
         cursor: pointer;
-
+        background-color: #ffc600;
+        width: 30%;
+        margin-top: 0.5vw;
 
         &:hover {
-            color: $verde-claro;
+            background-color: $verde-claro;
         }
 
     }
@@ -210,7 +213,8 @@
         }
 
         .header__ajuda {
-            font-size: 8vw;
+            margin-top: 2vw;
+            font-size: 2.5vw;
         }
     }
 
