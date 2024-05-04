@@ -71,15 +71,16 @@
         display: block;
         margin-left: auto;
         color: #0d3080;
+        margin-top: 0.57vw;
         padding: 0.5vw;
-        font-size: 1vw;
+        padding-top: 0.25vw;
+        font-size: 1.25vw;
         font-weight: 700;
         text-align: center;
         border-radius: 0.625vw;
         cursor: pointer;
         background-color: #ffc600;
         width: 30%;
-        margin-top: 0.5vw;
 
         &:hover {
             background-color: $verde-claro;
@@ -213,8 +214,10 @@
         }
 
         .header__ajuda {
-            margin-top: 2vw;
-            font-size: 2.5vw;
+            margin-top: 2.5vw;
+            font-size: 2.75vw;
+            padding: 1vw;
+            padding-top: 0.75vw;
             width: 100%;
         }
     }
