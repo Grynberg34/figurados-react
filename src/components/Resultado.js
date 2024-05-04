@@ -34,7 +34,7 @@ function Resultado(props) {
                   auth === true ?
                   <h1 className="resultado__certo__subtitle">adicionado ao álbum</h1>
                   :<div>
-                    <h1 className="resultado__certo__subtitle">cadastre-se ou faça login para adicionar a figurinha no álbum e jogar os números anteriores</h1>
+                    <h1 className="resultado__certo__subtitle">cadastre-se ou faça login para adicionar a figurinha no álbum e para acessar os jogos anteriores</h1>
                     <div className='resultado__certo__google'>
                       <GoogleLogin
                       onSuccess={response => {
@@ -87,7 +87,7 @@ function Resultado(props) {
           {
             auth === false ?
             <div className='resultado__errado__login'>
-              <h2 className="resultado__errado__login__text">cadastre-se ou faça login para jogar os números anteriores</h2>
+              <h2 className="resultado__errado__login__text">cadastre-se ou faça login para acessar os jogos anteriores</h2>
               <div className='resultado__errado__login__google'>
                 <GoogleLogin
                 onSuccess={response => {

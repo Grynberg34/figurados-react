@@ -93,7 +93,7 @@ function Header(props) {
         <Modal animation={false} show={showLogin} onHide={handleCloseLogin} >
           <i className="login-close flaticon-cancel" onClick={handleCloseLogin}></i>
           <div className='modal-login'>
-            <h1 className='modal-login__title'>cadastre-se ou faça login para jogar os anteriores</h1>
+            <h1 className='modal-login__title'>cadastre-se ou faça login para acessar os jogos anteriores</h1>
               <div className='modal-login__google'>
                 <GoogleLogin
                 onSuccess={response => {
