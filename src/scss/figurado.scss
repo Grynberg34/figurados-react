@@ -73,15 +73,16 @@
             margin-top: 2vw;
 
             .figurado__dia__menu__title {
-                color: $amarelo;
+                color: $azul;
                 font-size: 1.25vw;
                 font-weight: 500;
                 margin-bottom: 2vw;
                 text-align: center;
-                padding: 0.5vw;
-                background-color: $azul;
+                padding: 1.5vw;
+                background-color: $verde-claro;
                 border-radius: 0.625vw;
-                border: 0.2vw solid $amarelo;
+                border: 0.2vw solid $azul;
+                font-style: italic;
             }
 
             .figurado__dia__menu__option {

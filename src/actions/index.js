@@ -63,16 +63,8 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
 
                 var palpites = response.data.palpites;
         
-                var errados = [];
-        
-                for (var i=0; i < palpites.length; i++) {
-                    if (palpites[i].certo === false) {
-                        errados.push(palpites[i].id)
-                    }
-                }
 
-
-                if (errados.length > 7) {
+                if (palpites.length > 7) {
 
                     var resultado = {
                         certo: true,
@@ -87,7 +79,7 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
 
                     dispatch({ type: 'RESET_PALPITES', payload: {figurado_num: response.data.número, opções : response.data.palpites, erros:0, jogador: {nome:'Carlinhos Bala'}, chute: false}});
                 } else {
-                    dispatch({ type: 'RESET_PALPITES', payload: {figurado_num: response.data.número, opções : response.data.palpites, erros:7-errados.length, jogador: response.data.chute.jogador, chute: response.data.chute.resultado}});
+                    dispatch({ type: 'RESET_PALPITES', payload: {figurado_num: response.data.número, opções : response.data.palpites, erros:7-palpites.length, jogador: response.data.chute.jogador, chute: response.data.chute.resultado}});
                 }
         
                 dispatch({ type: 'GET_FIGURADO', payload: response.data });
@@ -327,4 +319,3 @@ export const SetModalAlbum = (figurado) => async dispatch => {
 
     dispatch({ type: 'SET_MODAL', payload: figurado});
 };
-
