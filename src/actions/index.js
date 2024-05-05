@@ -171,15 +171,7 @@ export const GetFigurado= (id, user) => async dispatch => {
 
         var palpites = response.data.palpites;
 
-        var errados = [];
-        
-        for (var i=0; i < palpites.length; i++) {
-            if (palpites[i].certo === false) {
-                errados.push(palpites[i].id)
-            }
-        }
-
-        dispatch({ type: 'RESET_PALPITES', payload: {figurado_num: response.data.número, opções : response.data.palpites, erros:7-errados.length, jogador: response.data.chute.jogador, chute: response.data.chute.resultado}});
+        dispatch({ type: 'RESET_PALPITES', payload: {figurado_num: response.data.número, opções : response.data.palpites, erros:7-palpites.length, jogador: response.data.chute.jogador, chute: response.data.chute.resultado}});
 
         dispatch({ type: 'GET_FIGURADO', payload: response.data });
 
