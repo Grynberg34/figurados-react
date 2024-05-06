@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { FilterJogador } from "../actions";
 import { EscolherJogador } from "../actions";
 import { DeletarJogador } from "../actions";
+import { GetAlbum } from '../actions';
 import { ChutarJogador } from "../actions";
 import { store } from "../store";
 import Container from "react-bootstrap/Container";
@@ -33,6 +34,7 @@ function FiguradoPalpites(props) {
 
   function chutarJogador(jogador, id, user) {
     store.dispatch(ChutarJogador(jogador, id, user));
+    store.dispatch(GetAlbum(user));
   }
 
   return (
