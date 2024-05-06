@@ -51,13 +51,13 @@ function Home(props) {
       )
     } else {
         if (figurado === null)  {
-          store.dispatch(GetFigurado(num_id, user))
+          store.dispatch(GetFigurado(num_id, user, palpites))
           return (
             <div className="home" style={{backgroundImage: `url('/background7.png')`}}></div>
           )
         } else {
           if (figurado.número !== num_id) {
-            store.dispatch(GetFigurado(num_id, user))
+            store.dispatch(GetFigurado(num_id, user, palpites))
             return (
               <div className="home" style={{backgroundImage: `url('/background7.png')`}}></div>
             )

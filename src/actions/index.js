@@ -29,12 +29,9 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
 
                 palpite.user = user.id;
 
-                console.log(user.id)
-
                 palpite.figurado = figurado.id;
 
                 await api.post('/jogo/palpite', palpite, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*"}}).then( async function(response){
-                    console.log(response)
                 }).catch(function(err){
                     console.log(err.response);
                 })
@@ -61,10 +58,11 @@ export const CheckAuth = (token, palpites, figurado) => async dispatch => {
         
             await api.post('jogo/figurado',  figurado_new, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*"}}).then( async function(response){
 
+                var chute = response.data.chute;
+
                 var palpites = response.data.palpites;
         
-
-                if (palpites.length > 7) {
+                if (palpites.length > 7 && chute === null) {
 
                     var resultado = {
                         certo: true,
@@ -120,8 +118,6 @@ export const LogoutUser = () => async dispatch => {
     await dispatch({ type: 'LOGIN_USER', payload: null });
     await dispatch({ type: 'CHECK_AUTH', payload: false });
     await dispatch({ type: 'CHECK_USER', payload: null });
-    await dispatch({ type: 'RESET_PALPITES', payload: {figurado_num: null, opções : [], erros:7, jogador: null, chute: null}});
-
 };
 
 export const CheckMobile = (value) => async dispatch => {
@@ -152,7 +148,7 @@ export const GetOpções = () => async dispatch => {
     })
 }
 
-export const GetFigurado= (id, user) => async dispatch => {
+export const GetFigurado= (id, user, palpites) => async dispatch => {
 
     var user_id;
 
@@ -169,10 +165,10 @@ export const GetFigurado= (id, user) => async dispatch => {
 
     await api.post('jogo/figurado', figurado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*"}},).then(function(response){
 
-        var palpites = response.data.palpites;
-
-        dispatch({ type: 'RESET_PALPITES', payload: {figurado_num: response.data.número, opções : response.data.palpites, erros:7-palpites.length, jogador: response.data.chute.jogador, chute: response.data.chute.resultado}});
-
+        if (user_id !== null || palpites.figurado_num !== figurado.id) {
+            dispatch({ type: 'RESET_PALPITES', payload: {figurado_num: response.data.número, opções : response.data.palpites, erros:7-response.data.palpites.length, jogador: response.data.chute.jogador, chute: response.data.chute.resultado}});
+        }
+    
         dispatch({ type: 'GET_FIGURADO', payload: response.data });
 
     }).catch(function(err){
