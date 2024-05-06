@@ -69,7 +69,9 @@ function Home(props) {
           
                   <Row>
           
-                    <Col md={2}></Col>  
+                    <Col md={2}>  
+                      <a href="//ptaupsom.com/4/7445891">Ad</a>
+                    </Col>  
           
                     <Col md={8}>
           
