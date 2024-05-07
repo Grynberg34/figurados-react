@@ -261,8 +261,24 @@ export const ChutarJogador = (jogador, figurado, user) => async dispatch => {
             user : user.id
         }
 
-        await api.post('/jogo/chute',  resultado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*",}}).then(function(response){
-
+        await api.post('/jogo/chute',  resultado, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*",}}).then(async function(response){
+            let data = {
+                user: user.id
+            }
+            
+            await api.post('/jogo/album', data, {headers: {'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`, "Access-Control-Allow-Origin": "*",}}).then(function(response){
+        
+                var album = {
+                    figurados: response.data,
+                    asc: true,
+                    active: null
+                }
+        
+                dispatch({ type: 'GET_ALBUM', payload: album});
+        
+            }).catch(function(err){
+                console.log(err.response);
+            })
         }).catch(function(err){
             console.log(err.response);
         })
