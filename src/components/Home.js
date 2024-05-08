@@ -89,7 +89,9 @@ function Home(props) {
           
                     </Col>
           
-                    <Col md={2}></Col>  
+                    <Col md={2}>
+                      <div id="container-038c6f715381a09d8ccc5627797d8ded"></div>  
+                    </Col>  
           
                   </Row>
           
