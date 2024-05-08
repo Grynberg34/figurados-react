@@ -13,7 +13,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "../scss/home.scss";
 
+
 function Home(props) {
+  
 
   let { id } = useParams();
   
@@ -70,9 +72,7 @@ function Home(props) {
                   <Row>
           
                     <Col md={2}>  
-
-                    <script async="async" data-cfasync="false" src="//pl23258128.highcpmgate.com/038c6f715381a09d8ccc5627797d8ded/invoke.js"></script>
-                    <div id="container-038c6f715381a09d8ccc5627797d8ded"></div>
+                      <div id="container-038c6f715381a09d8ccc5627797d8ded"></div>
                     </Col>  
           
                     <Col md={8}>
