@@ -1,5 +1,5 @@
 
-# Bolão Copa do Mundo 2022 (Aplicação React)
+# Figurados (Aplicação React)
 
 **Descrição:**  
 Aplicação desenvolvida em React de jogo para entusiastas do futebol brasileiro das décadas de 90 e 2000. O usuário deve tentar acertar quem é o jogador do dia a partir de palpites certos e errados sobre times, títulos e posição do jogador oculto do respectivo dia (um novo jogador a cada 24h). Caso o usuário acerte ele ganha uma figurinha virtual do jogador em questão e adiciona a figurinha em seu álbum. 
